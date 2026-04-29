@@ -1,6 +1,12 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
 # Claude Code OS — Kit Ratos de IA
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
+Este repositório é o kit de boas-vindas do curso Claude Code OS, feito pelo [Ratos de IA](https://ratosdeia.com.br). Não é um projeto de software tradicional — é um sistema de workspace com contexto persistente e skills (slash commands) que automatizam processos do negócio do usuário.
 
 Se você acabou de clonar esse repositório:
 1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
@@ -8,7 +14,60 @@ Se você acabou de clonar esse repositório:
 
 ---
 
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
+## Slash commands disponíveis
+
+Ficam em `.claude/commands/` e são invocados com `/nome`:
+
+| Comando | O que faz |
+|---|---|
+| `/setup` | Onboarding completo: entrevista o usuário, preenche contexto e configura git |
+| `/iniciar` | Carrega contexto do negócio no início de cada sessão |
+| `/mapear` | Descobre processos repetíveis e cria skills personalizadas |
+| `/syncar` | Commit + push pro GitHub (configura na primeira vez) |
+| `/atualizar` | Varre o projeto e atualiza arquivos de contexto desatualizados |
+| `/novo-projeto` | Cria pasta de projeto com CLAUDE.md dedicado |
+
+Skills adicionais criadas pelo `/mapear` ficam em `.claude/skills/nome-da-skill/SKILL.md` (locais ao projeto) ou `~/.claude/skills/` (globais).
+
+---
+
+## Arquitetura
+
+O sistema é **context-first**: em toda sessão Claude lê os arquivos de contexto antes de qualquer tarefa. Fluxo de leitura:
+
+```
+CLAUDE.md
+    ↓
+_contexto/empresa.md       ← quem é o usuário, negócio, clientes, equipe, ferramentas
+_contexto/preferencias.md  ← tom de voz, estilo, o que evitar
+_contexto/estrategia.md    ← foco atual, prioridades, prazos
+    ↓
+marca/design-guide.md      ← identidade visual — só para tasks visuais
+    ↓
+.claude/commands/*.md      ← slash commands invocados pelo usuário
+.claude/skills/*/SKILL.md  ← skills personalizadas criadas pelo /mapear
+```
+
+**`templates/`** contém referências, nunca editadas diretamente:
+- `templates/perfis/` — modelos de CLAUDE.md pra diferentes perfis (solopreneur, freelancer, agência, empresa)
+- `templates/skills/` — templates de skills prontas (carrossel, proposta, slide, analisar-dados, etc.)
+- `templates/ferramentas/catalogo.md` — catálogo de APIs, CLIs e MCPs disponíveis pra usar em skills
+
+**`dados/`** é drop zone pra arquivos do usuário analisar (CSV, XLSX, PDF). Usar com `/analisar-dados dados/arquivo`.
+
+O hook em `.claude/settings.json` faz commit + push automático ao fim de cada sessão.
+
+---
+
+## Dependências externas
+
+Algumas skills precisam de ferramentas instaladas separadamente:
+
+- **Playwright** (renderização HTML → PNG para carrossel, proposta, slide): `npx playwright install chromium`
+- **MCPs** (Notion, Gmail, Canva, etc.): instalados via `claude mcp add [nome]` durante `/setup`
+- **APIs externas** (Cloudflare, Gemini, DALL-E, etc.): configuradas em `.env` — este arquivo é ignorado pelo git
+
+---
 
 ## Contexto do negócio
 
