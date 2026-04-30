@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento de Tráfego B2C — Alvim Grill</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --orange: #E87722;
+    --orange-dark: #C9641A;
+    --orange-light: #FFF0E5;
+    --black: #1A1A1A;
+    --gray: #F5F5F5;
+    --gray-mid: #E0E0E0;
+    --gray-text: #6B6B6B;
+    --white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .deck-wrapper {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .slide-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  .slide.active { display: flex; }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .nav button {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .nav button:hover { background: var(--orange-dark); }
+  .nav button:disabled { background: #444; cursor: default; }
+
+  .nav .counter {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  /* SLIDE ELEMENTS */
+  .tag {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  .tag.outline {
+    background: transparent;
+    border: 1.5px solid var(--orange);
+    color: var(--orange);
+  }
+
+  /* ===== SLIDE 1 — CAPA ===== */
+  .slide-capa {
+    background: var(--black);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8% 10%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide-capa::before {
+    content: '';
+    position: absolute;
+    right: -5%;
+    top: -10%;
+    width: 55%;
+    height: 120%;
+    background: var(--orange);
+    transform: skewX(-8deg);
+    opacity: 0.08;
+  }
+
+  .slide-capa::after {
+    content: '';
+    position: absolute;
+    right: 5%;
+    bottom: -5%;
+    width: 40%;
+    height: 100%;
+    background: var(--orange);
+    transform: skewX(-8deg);
+    opacity: 0.05;
+  }
+
+  .slide-capa .overline {
+    color: var(--orange);
+    font-size: 1.1vw;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2%;
+  }
+
+  .slide-capa h1 {
+    color: var(--white);
+    font-size: 4.5vw;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2%;
+    max-width: 65%;
+  }
+
+  .slide-capa h1 span { color: var(--orange); }
+
+  .slide-capa .subtitle {
+    color: #888;
+    font-size: 1.4vw;
+    font-weight: 400;
+    margin-top: 3%;
+  }
+
+  .slide-capa .meta {
+    display: flex;
+    gap: 2vw;
+    margin-top: 5%;
+    border-top: 1px solid #333;
+    padding-top: 3%;
+  }
+
+  .slide-capa .meta-item {
+    color: #666;
+    font-size: 0.9vw;
+  }
+
+  .slide-capa .meta-item strong {
+    display: block;
+    color: #ccc;
+    font-size: 1vw;
+    margin-bottom: 2px;
+  }
+
+  /* ===== SLIDE PADRÃO ===== */
+  .slide-default {
+    background: var(--white);
+    flex-direction: column;
+    padding: 5% 8%;
+  }
+
+  .slide-header {
+    margin-bottom: 5%;
+  }
+
+  .slide-header .slide-number {
+    color: var(--orange);
+    font-size: 0.85vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1%;
+  }
+
+  .slide-header h2 {
+    color: var(--black);
+    font-size: 2.8vw;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .slide-header h2 span { color: var(--orange); }
+
+  .slide-header .line {
+    width: 50px;
+    height: 3px;
+    background: var(--orange);
+    margin-top: 1.5%;
+  }
+
+  /* ===== SLIDE 2 — OPORTUNIDADE ===== */
+  .opportunity-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3%;
+    flex: 1;
+    align-items: start;
+  }
+
+  .opportunity-left p {
+    color: var(--gray-text);
+    font-size: 1.15vw;
+    line-height: 1.7;
+    margin-bottom: 4%;
+  }
+
+  .opportunity-left p strong { color: var(--black); }
+
+  .opportunity-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+  }
+
+  .stat-card {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 4% 5%;
+    border-left: 3px solid var(--orange);
+  }
+
+  .stat-card .stat-value {
+    font-size: 2.2vw;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.85vw;
+    color: var(--gray-text);
+    font-weight: 500;
+  }
+
+  /* ===== SLIDE 3 — PERSONAS ===== */
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    flex: 1;
+  }
+
+  .persona-card {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .persona-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--orange);
+  }
+
+  .persona-icon {
+    width: 2.8vw;
+    height: 2.8vw;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+  }
+
+  .persona-card h3 {
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .persona-card p {
+    font-size: 0.85vw;
+    color: var(--gray-text);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .persona-tag {
+    font-size: 0.75vw;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ===== SLIDE 4/5 — CANAIS ===== */
+  .channel-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    flex: 1;
+  }
+
+  .channel-box {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 5%;
+  }
+
+  .channel-box h3 {
+    font-size: 1.15vw;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .channel-box h3 .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .campaign-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+  }
+
+  .campaign-item {
+    background: white;
+    border-radius: 6px;
+    padding: 3% 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .campaign-item .name {
+    font-size: 0.85vw;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .campaign-item .type {
+    font-size: 0.75vw;
+    color: var(--gray-text);
+  }
+
+  .badge {
+    font-size: 0.7vw;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--orange-light);
+    color: var(--orange);
+    white-space: nowrap;
+  }
+
+  /* ===== SLIDE 6 — KEYWORDS ===== */
+  .keywords-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    flex: 1;
+  }
+
+  .keyword-group {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 4% 5%;
+  }
+
+  .keyword-group h3 {
+    font-size: 0.9vw;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .keyword-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .keyword-item {
+    font-size: 0.82vw;
+    color: var(--black);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .keyword-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .keyword-negative {
+    color: #999;
+  }
+
+  .keyword-negative::before {
+    background: #ccc;
+  }
+
+  /* ===== SLIDE 7 — META SEGMENTAÇÃO ===== */
+  .meta-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+    flex: 1;
+  }
+
+  .meta-box {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 4% 5%;
+  }
+
+  .meta-box h3 {
+    font-size: 0.9vw;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .meta-box h3 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag-item {
+    background: white;
+    border: 1px solid var(--gray-mid);
+    color: var(--black);
+    font-size: 0.75vw;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* ===== SLIDE 8 — ORÇAMENTO ===== */
+  .budget-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    flex: 1;
+  }
+
+  .budget-phase {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .budget-phase.phase2 {
+    background: var(--black);
+  }
+
+  .budget-phase .phase-label {
+    font-size: 0.8vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 2%;
+  }
+
+  .budget-phase h3 {
+    font-size: 1.1vw;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1%;
+  }
+
+  .budget-phase.phase2 h3 { color: white; }
+
+  .budget-phase .period {
+    font-size: 0.8vw;
+    color: var(--gray-text);
+    margin-bottom: 5%;
+  }
+
+  .budget-phase.phase2 .period { color: #888; }
+
+  .budget-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+  }
+
+  .budget-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+    padding: 3% 4%;
+  }
+
+  .budget-phase.phase2 .budget-row {
+    background: #2a2a2a;
+  }
+
+  .budget-row .channel-name {
+    font-size: 0.85vw;
+    font-weight: 600;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .budget-phase.phase2 .channel-name { color: #ddd; }
+
+  .budget-row .amount {
+    font-size: 0.85vw;
+    font-weight: 700;
+    color: var(--orange);
+  }
+
+  .budget-total {
+    margin-top: 4%;
+    padding-top: 4%;
+    border-top: 2px solid var(--orange);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .budget-total .total-label {
+    font-size: 0.85vw;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .budget-phase.phase2 .total-label { color: white; }
+
+  .budget-total .total-value {
+    font-size: 1.6vw;
+    font-weight: 800;
+    color: var(--orange);
+  }
+
+  /* ===== SLIDE 9 — KPIs ===== */
+  .kpi-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    flex: 1;
+  }
+
+  .kpi-group {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 4% 5%;
+  }
+
+  .kpi-group h3 {
+    font-size: 0.85vw;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .kpi-items { display: flex; flex-direction: column; gap: 4%; }
+
+  .kpi-item {
+    background: white;
+    border-radius: 6px;
+    padding: 4% 4%;
+    border-left: 3px solid var(--orange);
+  }
+
+  .kpi-item .kpi-name {
+    font-size: 0.85vw;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 2px;
+  }
+
+  .kpi-item .kpi-desc {
+    font-size: 0.75vw;
+    color: var(--gray-text);
+    line-height: 1.4;
+  }
+
+  .kpi-item .kpi-meta {
+    font-size: 0.75vw;
+    font-weight: 600;
+    color: var(--orange);
+    margin-top: 3px;
+  }
+
+  /* ===== SLIDE 10 — PRÉ-REQUISITOS ===== */
+  .prereq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    flex: 1;
+    align-items: start;
+  }
+
+  .prereq-list { display: flex; flex-direction: column; gap: 3%; }
+
+  .prereq-item {
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 3.5% 4%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+  }
+
+  .prereq-item .check {
+    width: 1.6vw;
+    height: 1.6vw;
+    border: 2px solid var(--orange);
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .prereq-item .prereq-text {
+    font-size: 0.9vw;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .prereq-note {
+    background: var(--orange-light);
+    border-radius: 8px;
+    padding: 5%;
+    border-left: 3px solid var(--orange);
+  }
+
+  .prereq-note h3 {
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 3%;
+  }
+
+  .prereq-note p {
+    font-size: 0.85vw;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* ===== SLIDE 11 — PRÓXIMOS PASSOS ===== */
+  .steps-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    background: var(--gray);
+    border-radius: 8px;
+    padding: 3% 4%;
+  }
+
+  .step-number {
+    width: 2.5vw;
+    height: 2.5vw;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .step-text h4 {
+    font-size: 0.95vw;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .step-text p {
+    font-size: 0.8vw;
+    color: var(--gray-text);
+    margin-top: 2px;
+  }
+
+  /* ===== SLIDE FINAL ===== */
+  .slide-final {
+    background: var(--black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide-final::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: var(--orange);
+    border-radius: 50%;
+    opacity: 0.04;
+    filter: blur(60px);
+  }
+
+  .slide-final h2 {
+    font-size: 4vw;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 2%;
+  }
+
+  .slide-final h2 span { color: var(--orange); }
+
+  .slide-final p {
+    font-size: 1.2vw;
+    color: #888;
+    margin-bottom: 5%;
+  }
+
+  .slide-final .brand {
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER NOS SLIDES */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 3%;
+    border-top: 1px solid var(--gray-mid);
+  }
+
+  .slide-footer .footer-brand {
+    font-size: 0.75vw;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .slide-footer .footer-client {
+    font-size: 0.75vw;
+    color: var(--gray-text);
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-wrapper">
+  <div class="slide-container">
+
+    <!-- SLIDE 1 — CAPA -->
+    <div class="slide slide-capa active">
+      <div class="overline">Sonzai — Abril 2026</div>
+      <h1>Planejamento de<br><span>Tráfego Pago B2C</span></h1>
+      <p style="color:#666;font-size:1.3vw;margin-top:1%">Estratégia de expansão para o mercado consumidor</p>
+      <div class="meta">
+        <div class="meta-item">
+          <strong>Cliente</strong>
+          Alvim Grill
+        </div>
+        <div class="meta-item">
+          <strong>Canais</strong>
+          Google Ads + Meta Ads
+        </div>
+        <div class="meta-item">
+          <strong>Objetivo</strong>
+          Expansão B2C
+        </div>
+        <div class="meta-item">
+          <strong>Ticket Médio</strong>
+          R$1.900 a R$4.600
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — OPORTUNIDADE -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">01 — Contexto</div>
+        <h2>A <span>Oportunidade</span> B2C</h2>
+        <div class="line"></div>
+      </div>
+      <div class="opportunity-grid">
+        <div class="opportunity-left">
+          <p>A Alvim Grill é uma marca <strong>consolidada no B2B</strong>, com portfólio de churrasqueiras e equipamentos gourmet premium. A expansão para o B2C representa a oportunidade de capturar um público que já existe — mas que hoje chega à marca principalmente por indicação.</p>
+          <p>O tráfego pago vai criar <strong>canais previsíveis de geração de demanda</strong>, reduzindo a dependência de indicações e ampliando o alcance da marca para novos compradores.</p>
+          <p>Com campanhas bem estruturadas no <strong>Google Ads e Meta Ads</strong>, a marca passa a aparecer no momento certo, para o público certo.</p>
+        </div>
+        <div class="opportunity-stats">
+          <div class="stat-card">
+            <div class="stat-value">R$1.900</div>
+            <div class="stat-label">Ticket mínimo do portfólio B2C</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">R$4.600</div>
+            <div class="stat-label">Ticket máximo — linha premium</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">2 canais</div>
+            <div class="stat-label">Google Ads (busca) + Meta Ads (discovery)</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — PERSONAS -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">02 — Público-Alvo</div>
+        <h2><span>3 Personas</span> B2C</h2>
+        <div class="line"></div>
+      </div>
+      <div class="personas-grid">
+        <div class="persona-card">
+          <div class="persona-icon">🏠</div>
+          <h3>O Reformador</h3>
+          <p>Homem, 35-50 anos, reformando área gourmet em casa de condomínio. Sabe o que quer e está comparando modelos e preços.</p>
+          <div class="persona-tag">Alta intenção de compra</div>
+          <div style="font-size:0.75vw;color:var(--gray-text)">Canal: Google Ads (Search)</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">🏗️</div>
+          <h3>O Construtor</h3>
+          <p>Casal, 35-50 anos, finalizando obra de casa nova. A área gourmet é prioridade no projeto, mas ainda está decidindo.</p>
+          <div class="persona-tag">Média intenção — em decisão</div>
+          <div style="font-size:0.75vw;color:var(--gray-text)">Canal: Google Ads + Meta Ads</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">🔥</div>
+          <h3>O Apreciador</h3>
+          <p>32-48 anos, segue perfis de gastronomia e casa no Instagram. Não está reformando agora, mas pode converter com conteúdo e oferta certa.</p>
+          <div class="persona-tag">Baixa a média intenção</div>
+          <div style="font-size:0.75vw;color:var(--gray-text)">Canal: Meta Ads (Awareness + Remarketing)</div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 — GOOGLE ADS -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">03 — Estratégia</div>
+        <h2>Google Ads — <span>Capturar Demanda</span></h2>
+        <div class="line"></div>
+      </div>
+      <div class="channel-layout">
+        <div>
+          <p style="font-size:0.95vw;color:var(--gray-text);line-height:1.7;margin-bottom:4%">Objetivo: capturar quem já está pesquisando. O Google Ads atinge o usuário no momento de maior intenção de compra.</p>
+          <div class="campaign-list">
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Churrasqueiras a Gás</div>
+                <div class="type">Conversão / Lead</div>
+              </div>
+              <span class="badge">Search</span>
+            </div>
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Churrasqueiras a Carvão</div>
+                <div class="type">Conversão / Lead</div>
+              </div>
+              <span class="badge">Search</span>
+            </div>
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Kit Gourmet Completo</div>
+                <div class="type">Conversão / Lead</div>
+              </div>
+              <span class="badge">Search</span>
+            </div>
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Remarketing</div>
+                <div class="type">Reativação de visitantes</div>
+              </div>
+              <span class="badge">Display</span>
+            </div>
+          </div>
+        </div>
+        <div class="channel-box">
+          <h3><span class="dot"></span>Tipos de campanha</h3>
+          <div style="display:flex;flex-direction:column;gap:4%">
+            <div style="background:white;border-radius:6px;padding:4%">
+              <div style="font-size:0.85vw;font-weight:700;color:var(--black);margin-bottom:3px">Search</div>
+              <div style="font-size:0.78vw;color:var(--gray-text);line-height:1.5">Captura intenção ativa via palavras-chave de compra</div>
+            </div>
+            <div style="background:white;border-radius:6px;padding:4%">
+              <div style="font-size:0.85vw;font-weight:700;color:var(--black);margin-bottom:3px">Shopping</div>
+              <div style="font-size:0.78vw;color:var(--gray-text);line-height:1.5">Exibe produtos com foto e preço direto na busca</div>
+            </div>
+            <div style="background:white;border-radius:6px;padding:4%">
+              <div style="font-size:0.85vw;font-weight:700;color:var(--black);margin-bottom:3px">Remarketing</div>
+              <div style="font-size:0.78vw;color:var(--gray-text);line-height:1.5">Reativa quem visitou o site e não converteu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 — META ADS -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">03 — Estratégia</div>
+        <h2>Meta Ads — <span>Criar Demanda</span></h2>
+        <div class="line"></div>
+      </div>
+      <div class="channel-layout">
+        <div>
+          <p style="font-size:0.95vw;color:var(--gray-text);line-height:1.7;margin-bottom:4%">Objetivo: alcançar quem ainda não está pesquisando, mas tem o perfil certo. O Meta Ads constrói demanda e alimenta o funil.</p>
+          <div class="campaign-list">
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Awareness — Lifestyle Gourmet</div>
+                <div class="type">Alcance / Tráfego</div>
+              </div>
+              <span class="badge">Carrossel / Vídeo</span>
+            </div>
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Captação de Leads</div>
+                <div class="type">Geração de leads</div>
+              </div>
+              <span class="badge">Lead Ad</span>
+            </div>
+            <div class="campaign-item">
+              <div>
+                <div class="name">B2C Remarketing</div>
+                <div class="type">Conversão</div>
+              </div>
+              <span class="badge">Single / Carrossel</span>
+            </div>
+          </div>
+        </div>
+        <div class="channel-box">
+          <h3><span class="dot"></span>Funil de campanhas</h3>
+          <div style="display:flex;flex-direction:column;gap:3%;position:relative">
+            <div style="background:white;border-radius:6px;padding:4%;border-left:3px solid #E87722">
+              <div style="font-size:0.8vw;font-weight:700;color:var(--orange)">TOPO</div>
+              <div style="font-size:0.8vw;font-weight:600;color:var(--black)">Awareness Gourmet</div>
+              <div style="font-size:0.75vw;color:var(--gray-text)">Alcançar novos públicos com conteúdo aspiracional</div>
+            </div>
+            <div style="background:white;border-radius:6px;padding:4%;border-left:3px solid #E87722">
+              <div style="font-size:0.8vw;font-weight:700;color:var(--orange)">MEIO</div>
+              <div style="font-size:0.8vw;font-weight:600;color:var(--black)">Captação de Leads</div>
+              <div style="font-size:0.75vw;color:var(--gray-text)">Converter interesse em contato qualificado</div>
+            </div>
+            <div style="background:white;border-radius:6px;padding:4%;border-left:3px solid #E87722">
+              <div style="font-size:0.8vw;font-weight:700;color:var(--orange)">FUNDO</div>
+              <div style="font-size:0.8vw;font-weight:600;color:var(--black)">Remarketing</div>
+              <div style="font-size:0.75vw;color:var(--gray-text)">Reativar visitantes e leads que não fecharam</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 — PALAVRAS-CHAVE -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">04 — Google Ads</div>
+        <h2><span>Palavras-chave</span> Principais</h2>
+        <div class="line"></div>
+      </div>
+      <div class="keywords-layout">
+        <div class="keyword-group">
+          <h3>Intenção de Compra</h3>
+          <div class="keyword-list">
+            <div class="keyword-item">comprar churrasqueira gourmet</div>
+            <div class="keyword-item">churrasqueira a gás preço</div>
+            <div class="keyword-item">churrasqueira inox embutida</div>
+            <div class="keyword-item">kit gourmet churrasqueira</div>
+            <div class="keyword-item">churrasqueira elétrica premium</div>
+            <div class="keyword-item">churrasqueira ecológica carvão</div>
+          </div>
+        </div>
+        <div class="keyword-group">
+          <h3>Pesquisa e Comparação</h3>
+          <div class="keyword-list">
+            <div class="keyword-item">melhor churrasqueira gourmet</div>
+            <div class="keyword-item">churrasqueira a gás ou carvão</div>
+            <div class="keyword-item">churrasqueira para área pequena</div>
+            <div class="keyword-item">churrasqueira para apartamento</div>
+            <div class="keyword-item">forno de pizza gourmet</div>
+            <div class="keyword-item">cooktop para área gourmet</div>
+          </div>
+        </div>
+        <div class="keyword-group">
+          <h3>Negativas Sugeridas</h3>
+          <div class="keyword-list">
+            <div class="keyword-item keyword-negative">grátis</div>
+            <div class="keyword-item keyword-negative">faça você mesmo / DIY</div>
+            <div class="keyword-item keyword-negative">como fazer</div>
+            <div class="keyword-item keyword-negative">tijolo / alvenaria</div>
+            <div class="keyword-item keyword-negative">churrasqueira artesanal</div>
+            <div class="keyword-item keyword-negative">churrasqueira barata</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 — META SEGMENTAÇÃO -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">05 — Meta Ads</div>
+        <h2><span>Segmentação</span> de Público</h2>
+        <div class="line"></div>
+      </div>
+      <div class="meta-layout">
+        <div class="meta-box">
+          <h3><span class="dot"></span>Interesses</h3>
+          <div class="tag-cloud">
+            <span class="tag-item">Churrasco</span>
+            <span class="tag-item">Gastronomia</span>
+            <span class="tag-item">Casa e Decoração</span>
+            <span class="tag-item">Arquitetura de Interiores</span>
+            <span class="tag-item">Gourmet / Fine Dining</span>
+            <span class="tag-item">Reformas Residenciais</span>
+          </div>
+        </div>
+        <div class="meta-box">
+          <h3><span class="dot"></span>Comportamentos</h3>
+          <div class="tag-cloud">
+            <span class="tag-item">Compradores online frequentes</span>
+            <span class="tag-item">Alta renda estimada</span>
+            <span class="tag-item">Proprietários de imóveis</span>
+          </div>
+        </div>
+        <div class="meta-box">
+          <h3><span class="dot"></span>Públicos Personalizados</h3>
+          <div class="tag-cloud">
+            <span class="tag-item">Visitantes do site — 30 dias</span>
+            <span class="tag-item">Visitantes — 60/180 dias</span>
+            <span class="tag-item">Engajamento Instagram</span>
+          </div>
+        </div>
+        <div class="meta-box">
+          <h3><span class="dot"></span>Lookalike</h3>
+          <div class="tag-cloud">
+            <span class="tag-item">1-3% da base B2B atual</span>
+            <span class="tag-item">1-3% dos visitantes do site</span>
+          </div>
+          <p style="font-size:0.75vw;color:var(--gray-text);margin-top:4%;line-height:1.5">Lookalike a partir de clientes reais tem alta taxa de qualificação — prioridade na fase de escala.</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8 — ORÇAMENTO -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">06 — Investimento</div>
+        <h2>Orçamento <span>Recomendado</span></h2>
+        <div class="line"></div>
+      </div>
+      <div class="budget-layout">
+        <div class="budget-phase">
+          <div class="phase-label">Fase 1</div>
+          <h3>Validação</h3>
+          <div class="period">Primeiros 60-90 dias</div>
+          <div class="budget-rows">
+            <div class="budget-row">
+              <div class="channel-name">Google Ads</div>
+              <div class="amount">R$3.000 – R$5.000/mês</div>
+            </div>
+            <div class="budget-row">
+              <div class="channel-name">Meta Ads</div>
+              <div class="amount">R$2.000 – R$3.000/mês</div>
+            </div>
+          </div>
+          <div class="budget-total">
+            <div class="total-label">Total mensal</div>
+            <div class="total-value">R$5k – R$8k</div>
+          </div>
+        </div>
+        <div class="budget-phase phase2">
+          <div class="phase-label">Fase 2</div>
+          <h3>Escala</h3>
+          <div class="period">Após validação — escalar os canais que performaram</div>
+          <div class="budget-rows">
+            <div class="budget-row">
+              <div class="channel-name">Google Ads</div>
+              <div class="amount">R$6.000 – R$12.000/mês</div>
+            </div>
+            <div class="budget-row">
+              <div class="channel-name">Meta Ads</div>
+              <div class="amount">R$4.000 – R$6.000/mês</div>
+            </div>
+          </div>
+          <div class="budget-total">
+            <div class="total-label">Total mensal</div>
+            <div class="total-value">R$10k – R$18k</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9 — KPIs -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">07 — Métricas</div>
+        <h2>KPIs <span>Principais</span></h2>
+        <div class="line"></div>
+      </div>
+      <div class="kpi-layout">
+        <div class="kpi-group">
+          <h3>Topo de Funil</h3>
+          <div class="kpi-items">
+            <div class="kpi-item">
+              <div class="kpi-name">CTR</div>
+              <div class="kpi-desc">% de cliques sobre impressões</div>
+              <div class="kpi-meta">Meta: >2% Search / >1% Meta</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">CPC Médio</div>
+              <div class="kpi-desc">Custo por clique</div>
+              <div class="kpi-meta">A definir na Fase 1</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">Impressões</div>
+              <div class="kpi-desc">Alcance total das campanhas</div>
+              <div class="kpi-meta">Volume e frequência</div>
+            </div>
+          </div>
+        </div>
+        <div class="kpi-group">
+          <h3>Conversão</h3>
+          <div class="kpi-items">
+            <div class="kpi-item">
+              <div class="kpi-name">CPL</div>
+              <div class="kpi-desc">Custo por Lead qualificado</div>
+              <div class="kpi-meta">Meta: R$50 a R$150</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">Taxa de Conversão</div>
+              <div class="kpi-desc">% de visitantes que viram lead</div>
+              <div class="kpi-meta">Meta: >1,5%</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">Leads / Mês</div>
+              <div class="kpi-desc">Volume total de leads gerados</div>
+              <div class="kpi-meta">Meta a definir</div>
+            </div>
+          </div>
+        </div>
+        <div class="kpi-group">
+          <h3>Resultado</h3>
+          <div class="kpi-items">
+            <div class="kpi-item">
+              <div class="kpi-name">CPA</div>
+              <div class="kpi-desc">Custo por venda fechada</div>
+              <div class="kpi-meta">Depende do tracking</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">ROAS</div>
+              <div class="kpi-desc">Receita gerada por real investido</div>
+              <div class="kpi-meta">Depende do tracking</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-name">Taxa de Fechamento</div>
+              <div class="kpi-desc">% de leads que viram clientes</div>
+              <div class="kpi-meta">Dado do comercial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10 — PRÉ-REQUISITOS -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">08 — Técnico</div>
+        <h2>Pré-requisitos <span>Técnicos</span></h2>
+        <div class="line"></div>
+      </div>
+      <div class="prereq-layout">
+        <div class="prereq-list">
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Google Tag Manager instalado no site</div>
+          </div>
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Meta Pixel instalado e configurado</div>
+          </div>
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Conversões rastreadas (formulário, WhatsApp, compra)</div>
+          </div>
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Google Analytics 4 ativo e integrado ao Google Ads</div>
+          </div>
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Feed de produtos (para campanhas Shopping)</div>
+          </div>
+          <div class="prereq-item">
+            <div class="check"></div>
+            <div class="prereq-text">Landing page otimizada para conversão</div>
+          </div>
+        </div>
+        <div class="prereq-note">
+          <h3>Por que isso importa?</h3>
+          <p>Sem rastreamento correto, não é possível medir CPA e ROAS — que são as métricas mais importantes para avaliar o retorno real das campanhas.</p>
+          <br>
+          <p>O setup técnico é pré-requisito antes de subir qualquer campanha. Ele garante que cada real investido seja rastreado do clique até a venda.</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 11 — PRÓXIMOS PASSOS -->
+    <div class="slide slide-default">
+      <div class="slide-header">
+        <div class="slide-number">09 — Execução</div>
+        <h2><span>Próximos</span> Passos</h2>
+        <div class="line"></div>
+      </div>
+      <div class="steps-layout">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-text">
+            <h4>Aprovação do planejamento</h4>
+            <p>Alinhar estratégia, orçamento e cobertura geográfica com o cliente</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-text">
+            <h4>Setup técnico</h4>
+            <p>Instalar Pixel, GTM e configurar rastreamento de conversões</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <h4>Criação das campanhas — Fase 1</h4>
+            <p>Subir campanhas de validação no Google Ads e Meta Ads</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-text">
+            <h4>Análise após 30 dias</h4>
+            <p>Revisar CPL, CTR e taxa de conversão — ajustar o que não performa</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-text">
+            <h4>Escala — Fase 2</h4>
+            <p>Aumentar investimento nos canais e campanhas validados</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <div class="footer-brand">Sonzai</div>
+        <div class="footer-client">Alvim Grill — Planejamento B2C 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE FINAL -->
+    <div class="slide slide-final">
+      <h2>Pronto para <span>crescer</span>.</h2>
+      <p>Alvim Grill — Expansão B2C com tráfego pago</p>
+      <div class="brand">Sonzai — Growth Marketing</div>
+    </div>
+
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <div class="nav">
+    <button onclick="changeSlide(-1)" id="btn-prev">← Anterior</button>
+    <div class="counter" id="counter">1 / 11</div>
+    <button onclick="changeSlide(1)" id="btn-next">Próximo →</button>
+  </div>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+
+  function changeSlide(dir) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(total - 1, current + dir));
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+    document.getElementById('btn-prev').disabled = current === 0;
+    document.getElementById('btn-next').disabled = current === total - 1;
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+  });
+
+  changeSlide(0);
+</script>
+
+</body>
+</html>
