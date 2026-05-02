@@ -4,14 +4,11 @@
 Workspace da Sonzai dedicado ao cliente Alvim Grill. Centraliza planejamentos de tráfego pago, criação de conteúdo e entregas da conta.
 
 **Estrutura de pastas:**
-- `briefing/` — contexto do cliente, reuniões, referências
-- `planejamentos/trafego/` — planejamento B2C, personas, palavras-chave, orçamento
-- `planejamentos/conteudo/` — calendários editoriais, pautas
-- `conteudo/carrosseis/` — carrosseis prontos
-- `conteudo/copys/` — textos, legendas, scripts
-- `conteudo/calendario/` — calendário de publicações
-- `relatorios/` — métricas, resultados de campanha
+- `_contexto/` — empresa, preferências e estratégia do projeto
+- `planejamentos/trafego/` — keywords, personas, planejamentos de campanha
+- `planejamentos/apresentacoes/` — todas as apresentações HTML (slides, propostas visuais)
 - `dados/` — arquivos pra analisar (CSV, planilhas, prints)
+- `marca/` — design guide e identidade visual
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
 
