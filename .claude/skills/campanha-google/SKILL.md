@@ -16,6 +16,7 @@ Ler antes de começar:
 - `_contexto/empresa.md`
 - `_contexto/preferencias.md`
 - `dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx` — prompt de pesquisa de keywords (usar na etapa de SpyFu para expandir ideias)
+- `dados/Mod1_Cap5_Aula9_Ideias_do_que_Pesquisar.pdf` — 8 categorias de ideias de keyword (aplicar como checklist de cobertura antes de fechar a lista)
 - `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx` — checklist de criação de anúncio (seguir antes de gerar os RSAs)
 - `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx` — 6 frameworks de copy (usar para montar títulos e descrições)
 
@@ -43,11 +44,27 @@ Aguardar. Se o usuário ainda não fez a pesquisa:
 
 > "Acessa o spyfu.com, digita alvimgrill.com.br, e me traz: os principais concorrentes que aparecem + as keywords de paid e organic que eles destacam."
 
-Com os dados do SpyFu em mãos, aplicar o prompt de pesquisa de keywords do arquivo `dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx`:
+Com os dados do SpyFu em mãos, aplicar os dois frameworks de pesquisa:
+
+**Framework 1 — Prompt Gianini** (`dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx`):
 - Entender o produto e os problemas que ele resolve
-- Gerar ideias de como as pessoas pesquisam antes de comprar
+- Gerar até 50 ideias de como as pessoas pesquisam antes de comprar
 - Organizar em tabela por relevância e tipo de relação (produto direto, solução de problema, desejo)
-- Filtrar apenas keywords com alta intenção de compra (pessoas próximas da compra)
+- Filtrar apenas keywords com alta intenção de compra
+
+**Framework 2 — 8 Categorias de Ideias** (`dados/Mod1_Cap5_Aula9_Ideias_do_que_Pesquisar.pdf`):
+Usar como checklist para garantir cobertura completa de keywords. Para cada categoria, levantar termos específicos da Alvim Grill:
+
+1. **Marca própria** — "Alvim Grill", "alvimgrill"
+2. **Solução própria** — nomes dos produtos (churrasqueira, lareira, kit gourmet, coifa)
+3. **Marcas concorrentes** — nomes das marcas identificadas no SpyFu
+4. **Solução dos concorrentes** — produtos e modelos que os concorrentes vendem
+5. **Variações de busca do cliente** — formas diferentes que o cliente usa para pesquisar o mesmo produto (ex: "churrasqueira de chão", "fogão a lenha gourmet", "parrilla")
+6. **Problemas que a persona quer resolver** — churrasquear em apartamento, fumaça, espaço pequeno, presente para o pai
+7. **Desejos e metas** — área gourmet dos sonhos, reunir família, churrasco premium, casa nova
+8. **Concorrentes por solução (não diretos)** — produtos que a persona compra no lugar do seu (ex: fogão a lenha, forno a lenha, grelha portátil)
+
+Ao final, consolidar todas as keywords levantadas e filtrar as que têm baixíssima intenção de compra antes de avançar.
 
 ### Passo 3 — Análise competitiva de anúncios
 
