@@ -1,3 +1,9 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
 # Claude Code OS — Kit Ratos de IA
 
 Este repositório é o kit de boas-vindas do curso Claude Code OS.
@@ -23,6 +29,31 @@ Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir
 Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo.
 
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
+
+---
+
+## Comandos disponíveis
+
+| Comando | O que faz |
+|---|---|
+| `/setup` | Onboarding interativo: cria todos os arquivos de contexto (~5 min) |
+| `/iniciar` | Carrega o contexto no início de uma nova sessão |
+| `/mapear` | Descobre processos repetitivos e cria skills personalizadas |
+| `/novo-projeto` | Cria um CLAUDE.md dedicado para um projeto específico |
+| `/atualizar` | Varre o estado atual e sincroniza os arquivos de contexto |
+| `/syncar` | Commit + push pra salvar tudo no GitHub |
+
+---
+
+## Templates de skills disponíveis
+
+Antes de criar uma skill do zero, verificar se existe template em `templates/skills/`:
+
+- **carrossel** — carrossel para Instagram/TikTok (4 variantes de design)
+- **publicar-instagram** — publicação em redes sociais via Graph API ou Post for Me
+
+Para o catálogo completo de ferramentas integráveis (Playwright, Cloudflare, WebSearch, MCP servers), consultar `templates/ferramentas/catalogo.md`.
+Para o catálogo de skills globais pré-construídas (copy Schwartz, copy Ogilvy, frontend design, etc.), consultar `templates/skills/catalogo.md`.
 
 ---
 
