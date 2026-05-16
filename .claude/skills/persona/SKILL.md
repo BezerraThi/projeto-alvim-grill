@@ -42,9 +42,31 @@ Fazer uma por vez. Aguardar resposta completa antes de ir pra próxima.
 **Pergunta 4:**
 > "Quais formas de pesquisar seriam ruins para esse produto — termos que trazem pessoas que não vão comprar? (ex: 'aluguel de', 'conserto de', 'como fazer')"
 
-### Passo 3 — Análise e geração do documento
+### Passo 3 — Análise dos sites dos concorrentes
 
-Com as 4 respostas em mãos, processar e estruturar:
+Perguntar:
+
+> "Me passa os sites dos principais concorrentes que você quer analisar."
+
+Aguardar os URLs. Para cada site informado, fazer WebFetch e extrair:
+- Como eles se posicionam (proposta de valor, tagline, diferencial principal)
+- Quais argumentos de venda usam em destaque (parcelamento, garantia, entrega, preço, qualidade)
+- Quais produtos têm em evidência e como descrevem
+- Tom de voz e linguagem usada com o cliente
+- Qualquer elemento de urgência ou escassez (estoque limitado, oferta por tempo, frete grátis condicionado)
+
+Consolidar o que foi encontrado em uma análise comparativa antes de avançar:
+
+> "Analisei os concorrentes. Aqui o que encontrei:
+>
+> **[Concorrente 1]:** [resumo em 2-3 linhas]
+> **[Concorrente 2]:** [resumo em 2-3 linhas]
+>
+> Os argumentos mais usados por eles são: [lista]. Isso vai alimentar os argumentos de venda da persona."
+
+### Passo 4 — Análise e geração do documento
+
+Com as 4 respostas + análise dos concorrentes, processar e estruturar:
 
 **Dores:** extrair os problemas reais por trás das respostas da Pergunta 1. Ir além do literal — identificar o desejo subjacente (status, praticidade, reunir família, etc.).
 
@@ -62,7 +84,7 @@ Com as 4 respostas em mãos, processar e estruturar:
 - usado, segunda mão, seminovo
 - planta, projeto, planta baixa
 
-### Passo 4 — Salvar
+### Passo 5 — Salvar
 
 Salvar o documento em `campanhas/personas/[nome-do-produto].md` com o seguinte formato:
 
@@ -103,6 +125,14 @@ Salvar o documento em `campanhas/personas/[nome-do-produto].md` com o seguinte f
 
 ### Específicas desse produto
 [lista vinda da Pergunta 4]
+
+## Análise competitiva dos sites
+
+[para cada concorrente analisado: proposta de valor, argumentos em destaque, tom de voz, diferenciais]
+
+## O que fazer diferente
+
+[com base na análise dos concorrentes, quais argumentos a Alvim Grill pode usar que eles não estão usando ou estão usando mal]
 
 ## Observações para copy
 
