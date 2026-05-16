@@ -137,7 +137,33 @@ Apresentar a estrutura completa antes de criar os anúncios:
 
 Aguardar confirmação antes de avançar para os anúncios.
 
-#### 4.3 — Checklist antes de criar os anúncios
+#### 4.3 — Regra do Bolo de Cenoura Fofinho (relevância em cadeia)
+
+Antes de criar qualquer anúncio, garantir que os três elementos estão alinhados:
+
+**Palavra-chave → Anúncio → Página de destino**
+
+Se a pessoa pesquisou "churrasqueira gourmet completa", o anúncio precisa falar de churrasqueira gourmet completa — não de churrasqueira genérica. E a página que ela vai cair precisa mostrar churrasqueiras gourmet completas — não a home do site.
+
+Essa cadeia quebrada reduz o Quality Score, sobe o CPC e piora a conversão.
+
+Para cada conjunto de anúncios, verificar os três pontos:
+
+1. **Keyword no anúncio:** o título principal deve conter a keyword ou uma variante próxima. Quem pesquisou "churrasqueira elétrica de embutir" precisa ver "elétrica de embutir" (ou similar) no título.
+
+2. **Anúncio na página:** o que o anúncio promete tem que estar visível na primeira dobra da página de destino. Se o anúncio diz "Parcele em 10x Sem Juros", a página precisa mostrar isso. Se diz "Kit Gourmet Completo", a página precisa mostrar o kit.
+
+3. **Página específica, não home:** sempre que possível, usar URL de destino que leva direto para a categoria ou produto, não para a página inicial. Quem pesquisou "churrasqueira a gás" deve cair na página de churrasqueiras a gás, não na home.
+
+Ao gerar os anúncios, indicar qual URL de destino usar para cada conjunto:
+
+> "Para esse conjunto, a URL de destino recomendada é: [página específica do produto/categoria]"
+
+Se o site não tiver página específica para aquela categoria, avisar:
+
+> "Para esse conjunto funcionar bem, o ideal é ter uma página dedicada a [produto/tema]. Usar a home como destino vai reduzir o Quality Score e aumentar o CPC."
+
+#### 4.4 — Checklist antes de criar os anúncios
 
 Antes de gerar qualquer título ou descrição, preencher o checklist do arquivo `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx`:
 
