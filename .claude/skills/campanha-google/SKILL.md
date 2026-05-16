@@ -15,6 +15,9 @@ triggers:
 Ler antes de começar:
 - `_contexto/empresa.md`
 - `_contexto/preferencias.md`
+- `dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx` — prompt de pesquisa de keywords (usar na etapa de SpyFu para expandir ideias)
+- `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx` — checklist de criação de anúncio (seguir antes de gerar os RSAs)
+- `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx` — 6 frameworks de copy (usar para montar títulos e descrições)
 
 ## Fluxo
 
@@ -32,13 +35,19 @@ Se não existir:
 
 > "Não tem análise de persona pra esse produto ainda. Recomendo rodar `/persona` primeiro — leva 5 minutos e alimenta toda a estrutura da campanha. Quer fazer agora ou continuar sem ela?"
 
-### Passo 2 — Dados do SpyFu
+### Passo 2 — Pesquisa de keywords (SpyFu + expansão)
 
 > "Cola aqui os dados que você coletou no SpyFu. Quero: principais concorrentes identificados, keywords de tráfego pago que eles usam e keywords orgânicas relevantes que apareceram."
 
 Aguardar. Se o usuário ainda não fez a pesquisa:
 
 > "Acessa o spyfu.com, digita alvimgrill.com.br, e me traz: os principais concorrentes que aparecem + as keywords de paid e organic que eles destacam."
+
+Com os dados do SpyFu em mãos, aplicar o prompt de pesquisa de keywords do arquivo `dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx`:
+- Entender o produto e os problemas que ele resolve
+- Gerar ideias de como as pessoas pesquisam antes de comprar
+- Organizar em tabela por relevância e tipo de relação (produto direto, solução de problema, desejo)
+- Filtrar apenas keywords com alta intenção de compra (pessoas próximas da compra)
 
 ### Passo 3 — Análise competitiva de anúncios
 
@@ -74,22 +83,42 @@ Exemplos: "comprar churrasqueira", "churrasqueira preço", "churrasqueira onde c
 **Campanha 2 — Média intenção** (termos mais genéricos, ainda relevantes)
 Exemplos: "churrasqueira a gás", "churrasqueira gourmet", "tipos de churrasqueira"
 
-#### 4.3 — Anúncios responsivos de pesquisa (RSA)
+#### 4.3 — Checklist antes de criar os anúncios
 
-Para cada grupo, gerar:
+Antes de gerar qualquer título ou descrição, preencher o checklist do arquivo `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx`:
+
+1. Para qual keyword (ou grupo temático) será criado esse anúncio?
+2. Quais argumentos/gatilhos os anúncios nas primeiras posições estão usando? (ordem de empilhamento)
+3. Quais gatilhos os sites dos anúncios usam na primeira dobra?
+4. Quais gatilhos são mais importantes para a Alvim Grill usar?
+5. Qual o empilhamento de gatilhos mais poderoso para esse grupo?
+
+Só depois de responder o checklist, gerar os anúncios.
+
+#### 4.4 — Anúncios responsivos de pesquisa (RSA)
+
+Para cada grupo, escolher o framework mais adequado do arquivo `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx`:
+
+- **Framework 3 (Dor):** para keywords onde a persona compra movida por uma dor clara (ex: não consegue churrasquear no apartamento)
+- **Framework 4 (Desejo):** para keywords onde o desejo/sonho é o motor (ex: churrasqueira gourmet, área premium)
+- **Framework 5 (Benefícios):** para keywords onde os ganhos práticos vencem (ex: kit completo, praticidade)
+- **Framework 6 (Urgência):** para keywords de alta intenção de compra (ex: comprar churrasqueira, churrasqueira preço)
+
+Aplicar o framework escolhido na estrutura:
 
 **Títulos (até 15, máx 30 caracteres cada):**
-- Incluir a keyword principal do grupo em pelo menos 2 títulos
-- Incluir os gatilhos identificados (parcelamento, frete, garantia)
-- Incluir CTA (Compre Agora, Peça o Seu, Confira)
-- Variar entre benefício, urgência e credencial
+- Pelo menos 2 títulos com a keyword principal ou variante aproximada
+- Gatilhos em ordem de prioridade definida no checklist
+- CTA em pelo menos 1 título (Compre Agora, Peça o Seu, Confira)
+- Informar o número de caracteres de cada título gerado
 
 **Descrições (até 4, máx 90 caracteres cada):**
-- Desenvolver as dores + argumentos de venda da persona
-- Uma descrição focada em benefício emocional
+- Aprofundar os gatilhos dos títulos, do mais forte para o mais fraco
+- Uma descrição focada em dor/desejo da persona
 - Uma focada em argumentos racionais (parcelamento, garantia, frete)
+- Informar o número de caracteres de cada descrição gerada
 
-#### 4.4 — Extensões
+#### 4.5 — Extensões
 
 **Sitelinks (mínimo 4):**
 Cada sitelink: título (máx 25 chars) + 2 descrições (máx 35 chars cada)
