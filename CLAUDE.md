@@ -4,17 +4,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-# Claude Code OS — Kit Ratos de IA
+# Alvim Grill — Claude Code OS
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
+## O que é esse workspace
 
-Se você acabou de clonar esse repositório:
-1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
-2. Depois rode `/mapear` pra criar skills personalizadas pro que você faz no dia a dia
+Workspace do Alvim para gestão e criação de campanhas de tráfego pago da Alvim Grill (alvimgrill.com.br). O Claude atua aqui como especialista em Google Ads e Facebook Ads, focado em gerar vendas B2C de churrasqueiras e lareiras.
+
+**Estrutura de pastas:**
+- `campanhas/google/` — estruturas de campanha, grupos de anúncios, copies de anúncio para Google Ads
+- `campanhas/meta/` — estruturas de campanha, públicos, copies e criativos para Facebook/Instagram Ads
+- `criativos/` — briefings e referências para peças visuais
+- `relatorios/` — análises de performance, relatórios de campanha
+- `dados/` — arquivos de dados, planilhas, exports de plataforma
+- `_contexto/` — contexto do negócio, preferências e estratégia atual
+- `marca/` — logo e guia de design
+- `templates/skills/` — templates de skills prontos pra personalizar com /mapear
+- `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
+- `tarefas.md` — lista de tarefas e próximos passos
+
+## Sobre o negócio
+
+Alvim Grill vende churrasqueiras a carvão, a gás, lareiras e kits gourmet com coifa. Ticket médio entre R$1.900 e R$4.651. Negócio já consolidado no B2B — o foco atual é estruturar o canal B2C via tráfego pago.
+
+## O que mais fazemos aqui
+
+Criação e otimização de campanhas no Google Ads e Facebook Ads. Estruturação de públicos, copies de anúncio, análise de métricas e tomada de decisão de campanha.
+
+## Ferramentas conectadas
+
+Google Ads, Facebook Ads Manager, Google Tag Manager, Google Analytics 4
 
 ---
-
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
 
 ## Contexto do negócio
 

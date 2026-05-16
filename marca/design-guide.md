@@ -1,4 +1,4 @@
-# Guia de Design
+# Guia de Design — Alvim Grill
 
 > Você pode editar esse arquivo a qualquer momento.
 > As skills de carrossel, proposta e slide leem este arquivo antes de criar qualquer visual.
@@ -7,63 +7,67 @@
 
 ## Cores
 
-- **Fundo principal:**
+**Fundo principal:** Branco (#FFFFFF)
 
-- **Cor de destaque / CTA:**
+**Cor de destaque / CTA:** Laranja vibrante (#E8610A — referência aproximada, validar com o site)
 
-- **Texto principal:**
+**Texto principal:** Preto / cinza escuro (#1A1A1A)
 
-- **Fundo alternativo / cards:**
+**Fundo alternativo / cards:** Cinza claro (#F5F5F5)
 
-- **Cor proibida:**
+**Cor proibida:** Azul, verde ou qualquer cor que conflite com o laranja da marca
 
 ---
 
 ## Tipografia
 
-- **Títulos e destaques:**
+**Títulos e destaques:** Sans-serif moderna, peso bold
 
-- **Corpo, subtítulos e botões:**
+**Corpo, subtítulos e botões:** Sans-serif moderna, peso regular ou medium
 
-- **Peso do título:**
+**Peso do título:** Bold (700)
 
 ---
 
 ## Estilo geral
 
+Clean e comercial com toque premium. Direto, sem ornamentos. Fotografias de produto em alta resolução são o principal elemento visual.
+
 ---
 
 ## Elementos-chave
 
-- Bordas:
-- Border-radius dos cards:
-- Botões:
-- Sombras:
+Bordas: sem bordas decorativas
+Border-radius dos cards: 8px
+Botões: laranja com texto branco, cantos levemente arredondados
+Sombras: leves, somente quando necessário para hierarquia
 
 ---
 
 ## O que NUNCA fazer
 
+Usar cores frias como azul ou verde como destaque. Usar fontes com serifa. Poluir o layout com muitos elementos decorativos. Usar gradientes pesados.
+
 ---
 
 ## Logo
 
-- **Arquivo:** *(ex: marca/logo.png ou marca/logo.svg)*
-- **Versão pra fundo escuro:** *(se tiver variação — ex: marca/logo-branco.png)*
-- **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
-- **Tamanho sugerido:** largura entre 120-200px nos HTMLs
+**Arquivo:** marca/logo-alvimgrill-laranja-branca.png
+**Versão pra fundo escuro:** não disponível (usar logo principal com ajuste de fundo)
+**Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
+**Tamanho sugerido:** largura entre 120-200px nos HTMLs
 
 ---
 
 ## Perfil do autor
 
-> Usado no estilo "tweet" do carrossel. Preenchido automaticamente no setup.
-
-- **Nome:**
-- **Handle:**
-- **Foto:** *(ex: marca/foto-perfil.jpg)*
-- **Badge verificado:** *(sim/não)*
+**Nome:** Alvim
+**Handle:** @alvimgrill
+**Foto:** não definida
+**Badge verificado:** não
 
 ---
 
 ## Observações adicionais
+
+Produto de ticket médio alto (R$1.900–R$4.651). O visual deve transmitir qualidade e confiança, nunca parecer barato ou genérico.
