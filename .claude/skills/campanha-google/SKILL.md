@@ -79,26 +79,63 @@ Aguardar. Extrair e listar internamente:
 
 Com persona + SpyFu + análise competitiva, gerar a estrutura completa.
 
-#### 4.1 — Keywords por grupo de anúncio (mesmo tema)
+#### 4.1 — Separação por nível de funil (campanhas distintas)
 
-Agrupar as keywords em conjuntos temáticos. Cada grupo deve ter keywords que descrevem o mesmo produto/intenção. Exemplo:
+Antes de agrupar por tema, classificar cada keyword pelo nível de intenção de compra. Isso define em qual campanha ela vai.
 
-- **Grupo: Churrasqueira a Gás** → churrasqueira a gás, churrasqueira gás, churrasqueira a gás inox, churrasqueira a gás embutir
-- **Grupo: Churrasqueira Gourmet** → churrasqueira gourmet, churrasqueira gourmet embutir, kit churrasqueira gourmet
+**Campanha 1 — Alta intenção** (sinal claro de compra: "comprar", "preço", "onde comprar", "loja de")
+Exemplos: "comprar churrasqueira", "churrasqueira preço", "lojas de churrasqueiras", "churrasqueira onde comprar"
+Lance: mais agressivo — são as pessoas mais próximas de fechar.
+
+**Campanha 2 — Média intenção** (sabe o que quer, está pesquisando, mas ainda não sinalizou compra)
+Exemplos: "churrasqueira a gás", "churrasqueira gourmet completa", "kit churrasqueira", "churrasqueira para apartamento"
+Lance: moderado.
+
+**Campanha 3 — Baixa intenção** (termo genérico, volume alto, intenção indefinida)
+Exemplos: "churrasqueira", "lareiras", termos sem qualificador de produto ou ação
+Lance: conservador — volume alto mas conversão mais difícil.
+
+Regra prática para classificar:
+- Tem "comprar", "preço", "loja", "onde comprar" → Campanha 1
+- Tem qualificador de produto (modelo, material, uso) mas sem sinal de compra → Campanha 2
+- Termo isolado, sem qualificador → Campanha 3
+
+#### 4.2 — Agrupamento por tema (conjuntos de anúncios)
+
+Dentro de cada campanha, agrupar keywords que descrevem o mesmo produto ou intenção. Cada conjunto deve ter keywords tão parecidas que o mesmo anúncio serve bem para todas.
+
+**Critério de agrupamento:** keywords do mesmo conjunto devem compartilhar o tema central. Se a pessoa pesquisou "churrasqueira elétrica de embutir" ou "churrasqueira elétrica cooktop", as duas estão buscando churrasqueira elétrica — mesmo conjunto. Mas "churrasqueira gourmet" e "churrasqueira elétrica" são temas diferentes — conjuntos separados.
+
+Exemplos de conjuntos para a Alvim Grill:
+- **Churrasqueira Gourmet** → churrasqueira gourmet, churrasqueiras gourmet, churrasqueira gourmet completa, churrasqueira gourmet vidro, churrasqueira para área gourmet, churrasqueiras para varanda gourmet
+- **Churrasqueira Elétrica** → churrasqueira elétrica de embutir, churrasqueira elétrica cooktop
+- **Churrasqueira a Gás** → churrasqueira a gás, churrasqueira gás inox
+- **Churrasqueira para Apartamento** → churrasqueira para apartamento, churrasqueira carvão apartamento, churrasqueira pequena
+- **Kit Churrasqueira** → kit churrasqueira, kit churrasqueira gourmet, kit para churrasqueira de alvenaria
+- **Alvenaria e Tijolinho** → churrasqueira alvenaria, churrasqueira de tijolinho
 
 Usar tipos de correspondência:
 - Correspondência de frase: "churrasqueira a gás"
 - Correspondência exata: [comprar churrasqueira a gás]
 
-#### 4.2 — Separação por funil (campanhas distintas)
+Apresentar a estrutura completa antes de criar os anúncios:
 
-Separar os grupos em duas campanhas:
+> "Aqui a estrutura que montei:
+>
+> **Campanha 1 — Alta Intenção**
+> - Conjunto: [nome] → [keywords]
+> - Conjunto: [nome] → [keywords]
+>
+> **Campanha 2 — Média Intenção**
+> - Conjunto: [nome] → [keywords]
+> - ...
+>
+> **Campanha 3 — Baixa Intenção**
+> - Conjunto: [nome] → [keywords]
+>
+> Confirma essa estrutura ou quer ajustar algum conjunto antes de criar os anúncios?"
 
-**Campanha 1 — Alta intenção** (termos com intenção de compra clara)
-Exemplos: "comprar churrasqueira", "churrasqueira preço", "churrasqueira onde comprar", "melhor churrasqueira"
-
-**Campanha 2 — Média intenção** (termos mais genéricos, ainda relevantes)
-Exemplos: "churrasqueira a gás", "churrasqueira gourmet", "tipos de churrasqueira"
+Aguardar confirmação antes de avançar para os anúncios.
 
 #### 4.3 — Checklist antes de criar os anúncios
 
