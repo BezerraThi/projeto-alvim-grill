@@ -211,16 +211,24 @@ Para cada grupo, escolher o framework mais adequado do arquivo `dados/[iAzazelOf
 Aplicar o framework escolhido na estrutura:
 
 **Títulos (até 15, máx 30 caracteres cada):**
-- Pelo menos 2 títulos com a keyword principal ou variante aproximada
-- Gatilhos em ordem de prioridade definida no checklist
-- CTA em pelo menos 1 título (Compre Agora, Peça o Seu, Confira)
+- Pelo menos 2 títulos com a keyword principal ou variante aproximada (regra 9 — repetir a keyword)
+- Pelo menos 1 título com o nome da marca: "Alvim Grill" (regra 6)
+- Pelo menos 1 título com CTA direto: Compre Agora, Peça o Seu, Veja Modelos (regra 4)
+- Pelo menos 2 títulos destacando benefícios: parcelamento, frete, garantia, prazo de entrega (regra 5)
+- Pelo menos 1 título com pergunta quando fizer sentido: "Procurando Churrasqueira?" (regra 10)
+- Se houver bônus real: brinde, instalação grátis, acessório incluso — incluir em 1 título (regra 7)
+- Usar parâmetro dinâmico de keyword em 1 título quando o conjunto tiver keywords parecidas: {KeyWord:Churrasqueira Gourmet} (regra 11)
 - Informar o número de caracteres de cada título gerado
 
 **Descrições (até 4, máx 90 caracteres cada):**
+- Repetir a keyword principal ou variante em pelo menos 1 descrição (regra 9)
 - Aprofundar os gatilhos dos títulos, do mais forte para o mais fraco
-- Uma descrição focada em dor/desejo da persona
-- Uma focada em argumentos racionais (parcelamento, garantia, frete)
+- Especificar prazo de ação no site quando possível: "Receba em X dias úteis", "Resposta em até Xh" (regra 8)
+- Uma descrição com pergunta + solução: "Procurando churrasqueira gourmet? A Alvim Grill tem o modelo ideal." (regra 10)
 - Informar o número de caracteres de cada descrição gerada
+
+**Extensões — usar o máximo disponível (regra 2):**
+Não deixar nenhuma extensão relevante em branco. Gerar para cada conjunto:
 
 #### 4.5 — Extensões
 
