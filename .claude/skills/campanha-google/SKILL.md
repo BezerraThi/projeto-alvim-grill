@@ -118,6 +118,30 @@ Usar tipos de correspondência:
 - Correspondência de frase: "churrasqueira a gás"
 - Correspondência exata: [comprar churrasqueira a gás]
 
+#### 4.3 — Verificação de canibalização por volume
+
+Depois de montar os conjuntos, verificar o volume de pesquisa de cada keyword dentro do mesmo conjunto e entre conjuntos da mesma campanha.
+
+**O problema:** se uma keyword tem 100x mais buscas que as outras no mesmo conjunto ou campanha, o Google vai concentrar o orçamento nela e ignorar as demais. As keywords menores ficam sem impressão e sem dados para otimizar.
+
+**Como detectar:** comparar as faixas de volume de cada keyword. Se dentro do mesmo conjunto ou campanha houver keywords com faixas muito diferentes (ex: uma com 100 mil - 1 mi e outra com 100 - 1 mil), há risco de canibalização.
+
+**Como resolver:**
+
+1. **Isolar a keyword de alto volume em campanha própria** com orçamento e lance separados. Isso garante que ela não consuma o budget das menores.
+
+2. **Agrupar keywords com volumes parecidos** no mesmo conjunto. Keywords de faixas próximas competem de forma equilibrada pelo orçamento.
+
+3. **Usar correspondência exata** para as keywords de alto volume que estiverem no mesmo conjunto que as menores. Isso limita o alcance e reduz o risco de ela dominar o orçamento.
+
+Ao montar a estrutura, sinalizar os casos de risco:
+
+> "⚠ Atenção: '[keyword X]' tem volume de [faixa] enquanto as outras do conjunto têm [faixa menor]. Risco de canibalização — recomendo isolar essa keyword em campanha ou conjunto separado."
+
+Exemplo prático aplicado à Alvim Grill:
+- "churrasqueira" (100 mil - 1 mi) não deve estar na mesma campanha que "churrasqueira gourmet completa" (100 - 1 mil) — a genérica vai consumir todo o orçamento
+- "churrasquerias gourmet" (10 mil - 100 mil) ao lado de "churrasqueira gourmet a carvão" (100 - 1 mil) no mesmo conjunto também representa risco
+
 Apresentar a estrutura completa antes de criar os anúncios:
 
 > "Aqui a estrutura que montei:
