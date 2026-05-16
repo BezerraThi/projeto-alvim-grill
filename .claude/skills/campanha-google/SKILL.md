@@ -44,7 +44,14 @@ Aguardar. Se o usuário ainda não fez a pesquisa:
 
 > "Acessa o spyfu.com, digita alvimgrill.com.br, e me traz: os principais concorrentes que aparecem + as keywords de paid e organic que eles destacam."
 
-Com os dados do SpyFu em mãos, aplicar os dois frameworks de pesquisa:
+Com os dados do SpyFu em mãos, fazer três coisas:
+
+**1. Extrair as keywords dos concorrentes:**
+- Listar todas as keywords de paid search que os concorrentes estão usando
+- Incluir variações de match type que aparecerem (ampla, frase, exata)
+- Anotar quais concorrentes usam cada keyword — keywords usadas por múltiplos concorrentes têm maior validação
+
+**2. Aplicar os dois frameworks de pesquisa:**
 
 **Framework 1 — Prompt Gianini** (`dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx`):
 - Entender o produto e os problemas que ele resolve
@@ -64,7 +71,22 @@ Usar como checklist para garantir cobertura completa de keywords. Para cada cate
 7. **Desejos e metas** — área gourmet dos sonhos, reunir família, churrasco premium, casa nova
 8. **Concorrentes por solução (não diretos)** — produtos que a persona compra no lugar do seu (ex: fogão a lenha, forno a lenha, grelha portátil)
 
-Ao final, consolidar todas as keywords levantadas e filtrar as que têm baixíssima intenção de compra antes de avançar.
+**3. Sugerir keywords com potencial não explorado:**
+Com base na análise das keywords dos concorrentes + frameworks acima, identificar e sugerir keywords que:
+- Os concorrentes não estão usando mas que a persona claramente buscaria
+- Têm sinal de compra mas ficaram de fora da lista de keywords coletadas
+- São variações de alta intenção de termos já identificados (ex: se "churrasqueira a gás" apareceu, sugerir "churrasqueira a gás inox", "churrasqueira a gás embutir", "churrasqueira a gás preço")
+- Representam nichos específicos da Alvim Grill que não aparecem nos concorrentes (ex: lareira a gás, coifa inox)
+
+Apresentar essas sugestões separadas das keywords coletadas:
+
+> "**Keywords dos concorrentes (validadas):**
+> [lista]
+>
+> **Sugestões com potencial (a validar no Keyword Planner):**
+> [lista com justificativa curta de cada uma]"
+
+Ao final, consolidar tudo e filtrar as que têm baixíssima intenção de compra antes de avançar.
 
 ### Passo 3 — Análise competitiva de anúncios
 
@@ -330,7 +352,8 @@ Depois de salvar, confirmar:
 
 ## Regras
 
-- Não inventar keywords, títulos ou gatilhos. Usar só o que veio da persona, SpyFu e análise competitiva.
+- Para keywords: extrair as dos concorrentes, aplicar os frameworks de pesquisa e sugerir variações com potencial não explorado. Sempre indicar quais são validadas (dos concorrentes) e quais são sugestões a confirmar no Keyword Planner.
+- Para títulos e gatilhos: usar o que veio da persona e da análise competitiva como base. Adaptar e complementar com os frameworks de copy — não restringir a cópia literal do que foi coletado.
 - Títulos devem ter no máximo 30 caracteres. Descriptions no máximo 90. Avisar se estiver próximo do limite.
 - Sempre separar em Campanha 1 (alta intenção) e Campanha 2 (média intenção).
 - Sempre gerar a lista de negativos completa antes de finalizar.
