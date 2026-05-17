@@ -276,13 +276,61 @@ Se não estiver instalado:
 
 ### Passo 6 — Lista de negativos
 
-Consolidar a lista de negativos padrão + específicos do produto (vindos da persona ou da análise competitiva):
+Consolidar a lista de negativos padrão + específicos do produto (vindos da persona ou da análise competitiva).
 
-**Padrão:**
-de graça, grátis, gratis, gratuito, como fazer, como montar, faça você mesmo, DIY, aluguel, alugar, conserto, manutenção, reparo, assistência técnica, usado, segunda mão, seminovo, planta, projeto, planta baixa, curso, aula
+**Formato obrigatório:** uma palavra-chave por linha, sem vírgulas separando termos, sem explicações. Exemplo:
+
+```
+grátis
+como fazer
+aluguel
+conserto
+```
+
+**Padrão (aplicar em todas as campanhas):**
+grátis
+gratis
+gratuito
+de graça
+free
+como fazer
+como montar
+como construir
+como instalar
+faça você mesmo
+DIY
+tutorial
+passo a passo
+aluguel
+alugar
+locação
+locar
+conserto
+manutenção
+reparo
+reforma
+assistência técnica
+técnico
+usado
+usada
+segunda mão
+seminovo
+planta
+projeto
+planta baixa
+desenho técnico
+curso
+aula
+treinamento
+apostila
+emprego
+vaga
+trabalho
+currículo
+salário
 
 **Específicos do produto:**
-[extrair da persona salva ou perguntar ao usuário]
+[extrair da persona salva ou perguntar ao usuário — manter o mesmo formato, uma por linha]
 
 ### Passo 7 — Salvar
 
