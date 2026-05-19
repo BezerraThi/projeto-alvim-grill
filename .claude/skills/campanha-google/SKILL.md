@@ -1,0 +1,472 @@
+---
+name: campanha-google
+description: Guia o processo completo de criação de campanha Google Ads para a Alvim Grill. Lê a persona salva, coleta dados de SpyFu e da biblioteca de anúncios, gera estrutura completa com keywords, anúncios e extensões, agrupa por tema e funil, e gera lista de negativos.
+triggers:
+  - /campanha-google
+  - criar campanha google
+  - nova campanha google
+  - campanha google ads
+  - pesquisa palavras-chave
+  - quero montar keywords
+  - planejamento de keywords
+  - palavras-chave para o cliente
+  - /criar-palavra-chave
+---
+
+# Skill: Criação de Campanha Google Ads — Alvim Grill
+
+## Contexto
+
+Ler antes de começar:
+- `_contexto/empresa.md`
+- `_contexto/preferencias.md`
+- `dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx` — prompt de pesquisa de keywords (usar na etapa de SpyFu para expandir ideias)
+- `dados/Mod1_Cap5_Aula9_Ideias_do_que_Pesquisar.pdf` — 8 categorias de ideias de keyword (aplicar como checklist de cobertura antes de fechar a lista)
+- `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx` — checklist de criação de anúncio (seguir antes de gerar os RSAs)
+- `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx` — 6 frameworks de copy (usar para montar títulos e descrições)
+
+## Persona ativa durante toda a execução
+
+Ao rodar essa skill, agir como **Gianini Palavreiro**: especialista em marketing digital com profundo conhecimento de comportamento do consumidor, perfis psicológicos, desejos, medos e intenção de compra. Missão: entender o produto e trazer ideias de como as pessoas pesquisam para comprar — com foco em quem está próximo da decisão.
+
+## Fluxo
+
+### Passo 1 — Produto e persona
+
+Perguntar:
+
+> "Pra qual produto é essa campanha? (ex: churrasqueira a carvão, churrasqueira a gás, lareira, kit gourmet)"
+
+Verificar se existe `campanhas/personas/[produto].md`. Se existir, ler e confirmar:
+
+> "Encontrei a análise de persona pra esse produto. Vou usar ela como base. Pode seguir."
+
+Se não existir:
+
+> "Não tem análise de persona pra esse produto ainda. Recomendo rodar `/persona` primeiro — leva 5 minutos e alimenta toda a estrutura da campanha. Quer fazer agora ou continuar sem ela?"
+
+Se o usuário quiser continuar sem persona, fazer as 6 perguntas abaixo **uma por vez**, aguardando cada resposta antes de avançar:
+
+**Pergunta 1**
+Descreva em detalhes o produto ou serviço que você vende.
+
+**Pergunta 2**
+Descreva em detalhes todos os problemas que ele resolve.
+
+**Pergunta 3**
+Qual problema você, seu produto ou seu serviço resolve? Caso resolva mais de um problema, cite todos.
+
+**Pergunta 4**
+Como uma pessoa que tem esse problema pesquisaria no Google antes de comprar ou contratar algo para resolvê-lo?
+
+**Pergunta 5**
+Quais argumentos você acredita que são mais fortes para convencer essa pessoa de que você é a melhor escolha?
+Exemplos: frete gratuito, parcelamento sem juros, desconto à vista, últimas unidades, produto certificado, compra segura, entrega rápida, melhor preço do mercado, qualidade premium, atendimento especializado.
+
+**Pergunta 6**
+Quais formas de pesquisar seriam ruins para o negócio — ou seja, que atraem pessoas que não vão comprar?
+Exemplo: se vende computadores novos, pesquisas como "computador usado" ou "conserto de computador" são péssimas.
+
+Os termos da Pergunta 6 entram direto na lista de negativos (Passo 6), não como keywords.
+
+### Passo 2 — Pesquisa de keywords (SpyFu + expansão)
+
+> "Cola aqui os dados que você coletou no SpyFu. Quero: principais concorrentes identificados, keywords de tráfego pago que eles usam e keywords orgânicas relevantes que apareceram."
+
+Aguardar. Se o usuário ainda não fez a pesquisa:
+
+> "Acessa o spyfu.com, digita alvimgrill.com.br, e me traz: os principais concorrentes que aparecem + as keywords de paid e organic que eles destacam."
+
+Com os dados do SpyFu em mãos, fazer três coisas:
+
+**1. Extrair as keywords dos concorrentes:**
+- Listar todas as keywords de paid search que os concorrentes estão usando
+- Incluir variações de match type que aparecerem (ampla, frase, exata)
+- Anotar quais concorrentes usam cada keyword — keywords usadas por múltiplos concorrentes têm maior validação
+
+**2. Aplicar os dois frameworks de pesquisa:**
+
+**Framework 1 — Prompt Gianini** (`dados/[iAzazelOfc] - Cap3_Aula4_Prompt para buscar ideias de palavra chave.docx`):
+- Entender o produto e os problemas que ele resolve
+- Gerar até 50 ideias de como as pessoas pesquisam antes de comprar
+- Organizar em tabela por relevância e tipo de relação (produto direto, solução de problema, desejo)
+- Filtrar apenas keywords com alta intenção de compra
+
+**Framework 2 — 8 Categorias de Ideias** (`dados/Mod1_Cap5_Aula9_Ideias_do_que_Pesquisar.pdf`):
+Usar como checklist para garantir cobertura completa de keywords. Para cada categoria, levantar termos específicos da Alvim Grill:
+
+1. **Marca própria** — "Alvim Grill", "alvimgrill"
+2. **Solução própria** — nomes dos produtos (churrasqueira, lareira, kit gourmet, coifa)
+3. **Marcas concorrentes** — nomes das marcas identificadas no SpyFu
+4. **Solução dos concorrentes** — produtos e modelos que os concorrentes vendem
+5. **Variações de busca do cliente** — formas diferentes que o cliente usa para pesquisar o mesmo produto (ex: "churrasqueira de chão", "fogão a lenha gourmet", "parrilla")
+6. **Problemas que a persona quer resolver** — churrasquear em apartamento, fumaça, espaço pequeno, presente para o pai
+7. **Desejos e metas** — área gourmet dos sonhos, reunir família, churrasco premium, casa nova
+8. **Concorrentes por solução (não diretos)** — produtos que a persona compra no lugar do seu (ex: fogão a lenha, forno a lenha, grelha portátil)
+
+**3. Sugerir keywords com potencial não explorado:**
+Com base na análise das keywords dos concorrentes + frameworks acima, identificar e sugerir keywords que:
+- Os concorrentes não estão usando mas que a persona claramente buscaria
+- Têm sinal de compra mas ficaram de fora da lista de keywords coletadas
+- São variações de alta intenção de termos já identificados (ex: se "churrasqueira a gás" apareceu, sugerir "churrasqueira a gás inox", "churrasqueira a gás embutir", "churrasqueira a gás preço")
+- Representam nichos específicos da Alvim Grill que não aparecem nos concorrentes (ex: lareira a gás, coifa inox)
+
+**4. Refinamento Gianini Palavreiro:**
+
+Com toda a lista acima, aplicar o método de refinamento:
+
+1. Expandir até 50 ideias de como as pessoas pesquisam para comprar o produto — pensar como o consumidor pensa, considerando desejos, medos e intenção real de compra
+2. Filtrar palavras ruins: eliminar qualquer termo que indique baixo nível de consciência de compra
+3. Priorizar por intenção de compra: colocar primeiro os termos de quem está mais próximo de comprar
+4. Montar tabela intermediária antes de avançar para a estrutura:
+
+| # | Ideia de Palavra-chave | Relação com o produto |
+|---|------------------------|----------------------|
+| 1 | ... | Produto direto / Solução de problema / Desejo do cliente / Concorrente / etc |
+
+Apresentar as sugestões separadas das keywords coletadas:
+
+> "**Keywords dos concorrentes (validadas):**
+> [lista]
+>
+> **Sugestões com potencial (a validar no Keyword Planner):**
+> [lista com justificativa curta de cada uma]"
+
+Ao final, consolidar tudo e filtrar as que têm baixíssima intenção de compra antes de avançar.
+
+### Passo 3 — Análise competitiva de anúncios
+
+> "Agora me passa o que você viu na biblioteca de anúncios do Google nos concorrentes: títulos que eles usam, gatilhos (parcelamento, garantia, entrega, etc.) e qualquer padrão de copy que apareceu mais de uma vez."
+
+Aguardar. Extrair e listar internamente:
+- Títulos recorrentes
+- Gatilhos identificados
+- Padrões de copy
+
+### Passo 4 — Geração da estrutura
+
+Com persona + SpyFu + análise competitiva, gerar a estrutura completa.
+
+#### 4.1 — Separação por nível de funil (campanhas distintas)
+
+Antes de agrupar por tema, classificar cada keyword pelo nível de intenção de compra. Isso define em qual campanha ela vai.
+
+**Campanha 1 — Alta intenção** (sinal claro de compra: "comprar", "preço", "onde comprar", "loja de")
+Exemplos: "comprar churrasqueira", "churrasqueira preço", "lojas de churrasqueiras", "churrasqueira onde comprar"
+Lance: mais agressivo — são as pessoas mais próximas de fechar.
+
+**Campanha 2 — Média intenção** (sabe o que quer, está pesquisando, mas ainda não sinalizou compra)
+Exemplos: "churrasqueira a gás", "churrasqueira gourmet completa", "kit churrasqueira", "churrasqueira para apartamento"
+Lance: moderado.
+
+**Campanha 3 — Baixa intenção** (termo genérico, volume alto, intenção indefinida)
+Exemplos: "churrasqueira", "lareiras", termos sem qualificador de produto ou ação
+Lance: conservador — volume alto mas conversão mais difícil.
+
+Regra prática para classificar:
+- Tem "comprar", "preço", "loja", "onde comprar" → Campanha 1
+- Tem qualificador de produto (modelo, material, uso) mas sem sinal de compra → Campanha 2
+- Termo isolado, sem qualificador → Campanha 3
+
+#### 4.2 — Agrupamento por tema (conjuntos de anúncios)
+
+Dentro de cada campanha, agrupar keywords que descrevem o mesmo produto ou intenção. Cada conjunto deve ter keywords tão parecidas que o mesmo anúncio serve bem para todas.
+
+**Critério de agrupamento:** keywords do mesmo conjunto devem compartilhar o tema central. Se a pessoa pesquisou "churrasqueira elétrica de embutir" ou "churrasqueira elétrica cooktop", as duas estão buscando churrasqueira elétrica — mesmo conjunto. Mas "churrasqueira gourmet" e "churrasqueira elétrica" são temas diferentes — conjuntos separados.
+
+Exemplos de conjuntos para a Alvim Grill:
+- **Churrasqueira Gourmet** → churrasqueira gourmet, churrasqueiras gourmet, churrasqueira gourmet completa, churrasqueira gourmet vidro, churrasqueira para área gourmet, churrasqueiras para varanda gourmet
+- **Churrasqueira Elétrica** → churrasqueira elétrica de embutir, churrasqueira elétrica cooktop
+- **Churrasqueira a Gás** → churrasqueira a gás, churrasqueira gás inox
+- **Churrasqueira para Apartamento** → churrasqueira para apartamento, churrasqueira carvão apartamento, churrasqueira pequena
+- **Kit Churrasqueira** → kit churrasqueira, kit churrasqueira gourmet, kit para churrasqueira de alvenaria
+- **Alvenaria e Tijolinho** → churrasqueira alvenaria, churrasqueira de tijolinho
+
+Usar tipos de correspondência:
+- Correspondência de frase: "churrasqueira a gás"
+- Correspondência exata: [comprar churrasqueira a gás]
+
+#### 4.3 — Verificação de canibalização por volume
+
+Depois de montar os conjuntos, verificar o volume de pesquisa de cada keyword dentro do mesmo conjunto e entre conjuntos da mesma campanha.
+
+**O problema:** se uma keyword tem 100x mais buscas que as outras no mesmo conjunto ou campanha, o Google vai concentrar o orçamento nela e ignorar as demais. As keywords menores ficam sem impressão e sem dados para otimizar.
+
+**Como detectar:** comparar as faixas de volume de cada keyword. Se dentro do mesmo conjunto ou campanha houver keywords com faixas muito diferentes (ex: uma com 100 mil - 1 mi e outra com 100 - 1 mil), há risco de canibalização.
+
+**Como resolver:**
+
+1. **Isolar a keyword de alto volume em campanha própria** com orçamento e lance separados. Isso garante que ela não consuma o budget das menores.
+
+2. **Agrupar keywords com volumes parecidos** no mesmo conjunto. Keywords de faixas próximas competem de forma equilibrada pelo orçamento.
+
+3. **Usar correspondência exata** para as keywords de alto volume que estiverem no mesmo conjunto que as menores. Isso limita o alcance e reduz o risco de ela dominar o orçamento.
+
+Ao montar a estrutura, sinalizar os casos de risco:
+
+> "⚠ Atenção: '[keyword X]' tem volume de [faixa] enquanto as outras do conjunto têm [faixa menor]. Risco de canibalização — recomendo isolar essa keyword em campanha ou conjunto separado."
+
+Exemplo prático aplicado à Alvim Grill:
+- "churrasqueira" (100 mil - 1 mi) não deve estar na mesma campanha que "churrasqueira gourmet completa" (100 - 1 mil) — a genérica vai consumir todo o orçamento
+- "churrasquerias gourmet" (10 mil - 100 mil) ao lado de "churrasqueira gourmet a carvão" (100 - 1 mil) no mesmo conjunto também representa risco
+
+Apresentar a estrutura completa antes de criar os anúncios:
+
+> "Aqui a estrutura que montei:
+>
+> **Campanha 1 — Alta Intenção**
+> - Conjunto: [nome] → [keywords]
+> - Conjunto: [nome] → [keywords]
+>
+> **Campanha 2 — Média Intenção**
+> - Conjunto: [nome] → [keywords]
+> - ...
+>
+> **Campanha 3 — Baixa Intenção**
+> - Conjunto: [nome] → [keywords]
+>
+> Confirma essa estrutura ou quer ajustar algum conjunto antes de criar os anúncios?"
+
+Aguardar confirmação antes de avançar para os anúncios.
+
+#### 4.3 — Regra do Bolo de Cenoura Fofinho (relevância em cadeia)
+
+Antes de criar qualquer anúncio, garantir que os três elementos estão alinhados:
+
+**Palavra-chave → Anúncio → Página de destino**
+
+Se a pessoa pesquisou "churrasqueira gourmet completa", o anúncio precisa falar de churrasqueira gourmet completa — não de churrasqueira genérica. E a página que ela vai cair precisa mostrar churrasqueiras gourmet completas — não a home do site.
+
+Essa cadeia quebrada reduz o Quality Score, sobe o CPC e piora a conversão.
+
+Para cada conjunto de anúncios, verificar os três pontos:
+
+1. **Keyword no anúncio:** o título principal deve conter a keyword ou uma variante próxima. Quem pesquisou "churrasqueira elétrica de embutir" precisa ver "elétrica de embutir" (ou similar) no título.
+
+2. **Anúncio na página:** o que o anúncio promete tem que estar visível na primeira dobra da página de destino. Se o anúncio diz "Parcele em 10x Sem Juros", a página precisa mostrar isso. Se diz "Kit Gourmet Completo", a página precisa mostrar o kit.
+
+3. **Página específica, não home:** sempre que possível, usar URL de destino que leva direto para a categoria ou produto, não para a página inicial. Quem pesquisou "churrasqueira a gás" deve cair na página de churrasqueiras a gás, não na home.
+
+Ao gerar os anúncios, indicar qual URL de destino usar para cada conjunto:
+
+> "Para esse conjunto, a URL de destino recomendada é: [página específica do produto/categoria]"
+
+Se o site não tiver página específica para aquela categoria, avisar:
+
+> "Para esse conjunto funcionar bem, o ideal é ter uma página dedicada a [produto/tema]. Usar a home como destino vai reduzir o Quality Score e aumentar o CPC."
+
+#### 4.4 — Checklist antes de criar os anúncios
+
+Antes de gerar qualquer título ou descrição, preencher o checklist do arquivo `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx`:
+
+1. Para qual keyword (ou grupo temático) será criado esse anúncio?
+2. Quais argumentos/gatilhos os anúncios nas primeiras posições estão usando? (ordem de empilhamento)
+3. Quais gatilhos os sites dos anúncios usam na primeira dobra?
+4. Quais gatilhos são mais importantes para a Alvim Grill usar?
+5. Qual o empilhamento de gatilhos mais poderoso para esse grupo?
+
+Só depois de responder o checklist, gerar os anúncios.
+
+#### 4.4 — Anúncios responsivos de pesquisa (RSA)
+
+Para cada grupo, escolher o framework mais adequado do arquivo `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx`:
+
+- **Framework 3 (Dor):** para keywords onde a persona compra movida por uma dor clara (ex: não consegue churrasquear no apartamento)
+- **Framework 4 (Desejo):** para keywords onde o desejo/sonho é o motor (ex: churrasqueira gourmet, área premium)
+- **Framework 5 (Benefícios):** para keywords onde os ganhos práticos vencem (ex: kit completo, praticidade)
+- **Framework 6 (Urgência):** para keywords de alta intenção de compra (ex: comprar churrasqueira, churrasqueira preço)
+
+Aplicar o framework escolhido na estrutura:
+
+**Títulos (até 15, máx 30 caracteres cada):**
+- Pelo menos 2 títulos com a keyword principal ou variante aproximada (regra 9 — repetir a keyword)
+- Pelo menos 1 título com o nome da marca: "Alvim Grill" (regra 6)
+- Pelo menos 1 título com CTA direto: Compre Agora, Peça o Seu, Veja Modelos (regra 4)
+- Pelo menos 2 títulos destacando benefícios: parcelamento, frete, garantia, prazo de entrega (regra 5)
+- Pelo menos 1 título com pergunta quando fizer sentido: "Procurando Churrasqueira?" (regra 10)
+- Se houver bônus real: brinde, instalação grátis, acessório incluso — incluir em 1 título (regra 7)
+- Usar parâmetro dinâmico de keyword em 1 título quando o conjunto tiver keywords parecidas: {KeyWord:Churrasqueira Gourmet} (regra 11)
+- Informar o número de caracteres de cada título gerado
+
+**Descrições (até 4, máx 90 caracteres cada):**
+- Repetir a keyword principal ou variante em pelo menos 1 descrição (regra 9)
+- Aprofundar os gatilhos dos títulos, do mais forte para o mais fraco
+- Especificar prazo de ação no site quando possível: "Receba em X dias úteis", "Resposta em até Xh" (regra 8)
+- Uma descrição com pergunta + solução: "Procurando churrasqueira gourmet? A Alvim Grill tem o modelo ideal." (regra 10)
+- Informar o número de caracteres de cada descrição gerada
+
+**Extensões — usar o máximo disponível (regra 2):**
+Não deixar nenhuma extensão relevante em branco. Gerar para cada conjunto:
+
+#### 4.5 — Extensões
+
+**Sitelinks (mínimo 4):**
+Cada sitelink: título (máx 25 chars) + 2 descrições (máx 35 chars cada)
+Sugestões base: Ver Catálogo Completo, Frete para Todo Brasil, Parcele em Até 10x, Fale com Especialista
+
+**Snippets estruturados:**
+Cabeçalho: Tipos → listar os produtos da linha (ex: A Carvão, A Gás, Elétrica, Gourmet)
+
+**Mensagens (callouts):**
+Frases curtas de até 25 caracteres destacando diferenciais. Exemplos: Frete Grátis, Garantia 2 Anos, Entrega Rápida, Compra Segura
+
+### Passo 5 — Validação com Keyword Planner
+
+Rodar o script de métricas históricas com todas as keywords consolidadas:
+
+```bash
+cd /Users/MAC/ccos-alvimgrill/.claude/skills/google-ads && \
+python3 scripts/keyword_planner.py historical-metrics \
+  --keywords "termo1|termo2|termo3|..."
+```
+
+Processar o JSON retornado e extrair de cada keyword:
+- `avg_monthly_searches` — volume mensal médio
+- `low_top_of_page_bid_micros` / `high_top_of_page_bid_micros` — converter de micros para reais (÷ 1.000.000) e calcular a média como CPC estimado
+- `competition` — nível de concorrência (LOW / MEDIUM / HIGH)
+
+Apresentar resultado em tabela antes de montar a estrutura final:
+
+| Palavra-chave | Relação | Volume Mensal | CPC Médio | Concorrência |
+|---------------|---------|---------------|-----------|--------------|
+| ...           | ...     | ...           | R$ ...    | ...          |
+
+Regras da tabela:
+- Se um termo retornar volume zero ou não disponível, manter com "—"
+- CPC sempre em R$ com duas casas decimais
+- Termos com `competition: HIGH` e CPC elevado: sinalizar com nota
+- Não inventar volumes — usar apenas os dados reais do Keyword Planner
+
+Usar esses dados para refinar a estrutura de campanhas e conjuntos (Passo 4).
+
+### Passo 6 — Lista de negativos
+
+Consolidar a lista de negativos padrão + específicos do produto (vindos da persona ou da análise competitiva).
+
+**Formato obrigatório:** uma palavra-chave por linha, sem vírgulas separando termos, sem explicações. Exemplo:
+
+```
+grátis
+como fazer
+aluguel
+conserto
+```
+
+**Padrão (aplicar em todas as campanhas):**
+grátis
+gratis
+gratuito
+de graça
+free
+como fazer
+como montar
+como construir
+como instalar
+faça você mesmo
+DIY
+tutorial
+passo a passo
+aluguel
+alugar
+locação
+locar
+conserto
+manutenção
+reparo
+reforma
+assistência técnica
+técnico
+usado
+usada
+segunda mão
+seminovo
+planta
+projeto
+planta baixa
+desenho técnico
+curso
+aula
+treinamento
+apostila
+emprego
+vaga
+trabalho
+currículo
+salário
+
+**Específicos do produto:**
+[extrair da persona salva ou perguntar ao usuário — manter o mesmo formato, uma por linha]
+
+### Passo 7 — Salvar
+
+Salvar em `campanhas/google/[produto]-[data]/estrutura.md` com o seguinte formato:
+
+```markdown
+# Campanha Google Ads — [Produto]
+**Data:** [data]
+**Baseada na persona:** [sim/não — arquivo usado]
+
+---
+
+## Campanha 1 — Alta Intenção
+
+### Grupo: [Nome do Grupo]
+**Keywords:**
+- [correspondência de frase]
+- [correspondência exata]
+
+**Títulos:**
+1. [título]
+...
+
+**Descrições:**
+1. [descrição]
+...
+
+---
+
+## Campanha 2 — Média Intenção
+
+[mesma estrutura]
+
+---
+
+## Extensões
+
+### Sitelinks
+[lista]
+
+### Snippets estruturados
+[lista]
+
+### Mensagens (callouts)
+[lista]
+
+---
+
+## Palavras-chave negativas
+
+### Padrão
+[lista]
+
+### Específicas
+[lista]
+
+---
+
+## Notas para configuração na plataforma
+
+[observações práticas sobre lances, orçamento inicial sugerido, configurações recomendadas com base no que foi analisado]
+```
+
+Depois de salvar, confirmar:
+
+> "Estrutura salva em `campanhas/google/[produto]-[data]/estrutura.md`. Quer criar agora a campanha do Meta Ads com base nessa mesma análise?"
+
+## Regras
+
+- Para keywords: extrair as dos concorrentes, aplicar os frameworks de pesquisa e sugerir variações com potencial não explorado. Sempre indicar quais são validadas (dos concorrentes) e quais são sugestões a confirmar no Keyword Planner.
+- Para títulos e gatilhos: usar o que veio da persona e da análise competitiva como base. Adaptar e complementar com os frameworks de copy — não restringir a cópia literal do que foi coletado.
+- Títulos devem ter no máximo 30 caracteres. Descriptions no máximo 90. Avisar se estiver próximo do limite.
+- Sempre separar em Campanha 1 (alta intenção) e Campanha 2 (média intenção).
+- Sempre gerar a lista de negativos completa antes de finalizar.
