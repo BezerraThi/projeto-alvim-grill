@@ -1,6 +1,6 @@
 # Produtos Formatados para E-commerce — Alvim Grill
 
-> **Resumo:** 16 anúncios no total. Produtos com 3 e 4 queimadores foram separados em anúncios individuais.  
+> **Resumo:** 16 anúncios no total (SKUs ALVIM001–ALVIM016). Produtos 3, 4 e 5 (Hobby Grill, Atlanta 3Q e 4Q) já estão cadastrados com os SKUs 001–003. Os demais 13 produtos são novos (ALVIM004–ALVIM016). Produtos com 3 e 4 queimadores foram separados em anúncios individuais.  
 > ⚠️ **Atenção:** Phoenix 4 queimadores não tem preço na planilha — confirmar antes de publicar.
 
 ---
@@ -53,7 +53,7 @@ Medidas:
 
 ## PRODUTO 3
 
-**SKU:** ALVIM006
+**SKU:** ALVIM001 *(já cadastrado)*
 
 **Nome:** Churrasqueira a gás modelo Hobby Grill
 
@@ -79,7 +79,7 @@ Especificações e Medidas:
 
 ## PRODUTO 4
 
-**SKU:** ALVIM007
+**SKU:** ALVIM003 *(já cadastrado)*
 
 **Nome:** Churrasqueira a gás em inox 3 queimadores modelo Atlanta
 
@@ -109,7 +109,7 @@ Especificações e Medidas:
 
 ## PRODUTO 5
 
-**SKU:** ALVIM008
+**SKU:** ALVIM002 *(já cadastrado)*
 
 **Nome:** Churrasqueira a gás em inox 4 queimadores modelo Atlanta
 
@@ -139,7 +139,7 @@ Especificações e Medidas:
 
 ## PRODUTO 6
 
-**SKU:** ALVIM009
+**SKU:** ALVIM006
 
 **Nome:** Churrasqueira a gás em inox 3 queimadores modelo Montana
 
@@ -169,7 +169,7 @@ Especificações e Medidas:
 
 ## PRODUTO 7
 
-**SKU:** ALVIM010
+**SKU:** ALVIM007
 
 **Nome:** Churrasqueira a gás em inox 3 queimadores modelo Phoenix
 
@@ -199,7 +199,7 @@ Especificações e Medidas:
 
 ## PRODUTO 8 ⚠️ PREÇO A CONFIRMAR
 
-**SKU:** ALVIM011
+**SKU:** ALVIM008
 
 **Nome:** Churrasqueira a gás em inox 4 queimadores modelo Phoenix
 
@@ -229,7 +229,7 @@ Especificações e Medidas:
 
 ## PRODUTO 9
 
-**SKU:** ALVIM012
+**SKU:** ALVIM009
 
 **Nome:** Churrasqueira a gás em inox 3 queimadores modelo Houston
 
@@ -259,7 +259,7 @@ Especificações e Medidas:
 
 ## PRODUTO 10
 
-**SKU:** ALVIM013
+**SKU:** ALVIM010
 
 **Nome:** Churrasqueira a gás em inox 4 queimadores modelo Houston
 
@@ -289,7 +289,7 @@ Especificações e Medidas:
 
 ## PRODUTO 11
 
-**SKU:** ALVIM014
+**SKU:** ALVIM011
 
 **Nome:** Kit Gourmet Galvanizada Preta Capa Quadrada - Pequeno
 
@@ -320,7 +320,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 12
 
-**SKU:** ALVIM015
+**SKU:** ALVIM012
 
 **Nome:** Kit Gourmet Galvanizada Preta Capa Quadrada - Médio
 
@@ -351,7 +351,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 13
 
-**SKU:** ALVIM016
+**SKU:** ALVIM013
 
 **Nome:** Kit Gourmet Galvanizada Preta Capa Quadrada - Grande
 
@@ -382,7 +382,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 14
 
-**SKU:** ALVIM017
+**SKU:** ALVIM014
 
 **Nome:** Kit Gourmet Inox 430 - Pequeno
 
@@ -413,7 +413,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 15
 
-**SKU:** ALVIM018
+**SKU:** ALVIM015
 
 **Nome:** Kit Gourmet Inox 430 - Médio
 
@@ -444,7 +444,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 16
 
-**SKU:** ALVIM019
+**SKU:** ALVIM016
 
 **Nome:** Kit Gourmet Inox 430 - Grande
 
