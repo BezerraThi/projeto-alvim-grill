@@ -382,7 +382,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 14
 
-**SKU:** ALVIM014
+**SKU:** ALVIM017
 
 **Nome:** Kit Gourmet Inox 430 - Pequeno
 
@@ -413,7 +413,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 15
 
-**SKU:** ALVIM015
+**SKU:** ALVIM018
 
 **Nome:** Kit Gourmet Inox 430 - Médio
 
@@ -444,7 +444,7 @@ Atenção: Existem produtos neste kit compostos em inox 430, material não indic
 
 ## PRODUTO 16
 
-**SKU:** ALVIM016
+**SKU:** ALVIM019
 
 **Nome:** Kit Gourmet Inox 430 - Grande
 
