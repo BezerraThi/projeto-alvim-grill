@@ -65,6 +65,12 @@ Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o
 
 ---
 
+## Skills de execução instaladas
+
+- **google-ads-ratos** (`.claude/skills/google-ads-ratos/`) — braço de execução no Google Ads via SDK oficial (GAQL). Lê/cria/edita/pausa campanhas, ad groups, keywords, RSAs, extensões e negativas; puxa insights e faz pesquisa de keywords (Keyword Planner). Conta padrão: Alvim Grill (`882-495-7655`) sob o MCC Sonzai (`525-827-6876`). Config em `.env` (fora do git). Dispara com `/google-ads-ratos`.
+
+---
+
 ## Templates de skills disponíveis
 
 Antes de criar uma skill do zero, verificar se existe template em `templates/skills/`:
