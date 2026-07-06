@@ -7,7 +7,7 @@
 #     customer_id: "1234567890"  # sem hifens
 #     notas: "Opcional — qualquer observacao"
 
-clientes: []
-  # - nome: "Meu Cliente"
-  #   customer_id: "1234567890"
-  #   notas: "Conta principal"
+clientes:
+  - nome: "Alvim Grill"
+    customer_id: "8824957655"
+    notas: "Conta principal B2C. MCC: Sonzai (5258276876)."
