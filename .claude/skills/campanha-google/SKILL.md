@@ -6,11 +6,6 @@ triggers:
   - criar campanha google
   - nova campanha google
   - campanha google ads
-  - pesquisa palavras-chave
-  - quero montar keywords
-  - planejamento de keywords
-  - palavras-chave para o cliente
-  - /criar-palavra-chave
 ---
 
 # Skill: Criação de Campanha Google Ads — Alvim Grill
@@ -24,10 +19,6 @@ Ler antes de começar:
 - `dados/Mod1_Cap5_Aula9_Ideias_do_que_Pesquisar.pdf` — 8 categorias de ideias de keyword (aplicar como checklist de cobertura antes de fechar a lista)
 - `dados/[iAzazelOfc] - Mod3_Cap3_Aula4_Checklist para Criação de Anúncio_DOCX.docx` — checklist de criação de anúncio (seguir antes de gerar os RSAs)
 - `dados/[iAzazelOfc] - Mod3_Cap3_Aula5_Frameworks para Criação de Anúncios_DOCX.docx` — 6 frameworks de copy (usar para montar títulos e descrições)
-
-## Persona ativa durante toda a execução
-
-Ao rodar essa skill, agir como **Gianini Palavreiro**: especialista em marketing digital com profundo conhecimento de comportamento do consumidor, perfis psicológicos, desejos, medos e intenção de compra. Missão: entender o produto e trazer ideias de como as pessoas pesquisam para comprar — com foco em quem está próximo da decisão.
 
 ## Fluxo
 
@@ -44,30 +35,6 @@ Verificar se existe `campanhas/personas/[produto].md`. Se existir, ler e confirm
 Se não existir:
 
 > "Não tem análise de persona pra esse produto ainda. Recomendo rodar `/persona` primeiro — leva 5 minutos e alimenta toda a estrutura da campanha. Quer fazer agora ou continuar sem ela?"
-
-Se o usuário quiser continuar sem persona, fazer as 6 perguntas abaixo **uma por vez**, aguardando cada resposta antes de avançar:
-
-**Pergunta 1**
-Descreva em detalhes o produto ou serviço que você vende.
-
-**Pergunta 2**
-Descreva em detalhes todos os problemas que ele resolve.
-
-**Pergunta 3**
-Qual problema você, seu produto ou seu serviço resolve? Caso resolva mais de um problema, cite todos.
-
-**Pergunta 4**
-Como uma pessoa que tem esse problema pesquisaria no Google antes de comprar ou contratar algo para resolvê-lo?
-
-**Pergunta 5**
-Quais argumentos você acredita que são mais fortes para convencer essa pessoa de que você é a melhor escolha?
-Exemplos: frete gratuito, parcelamento sem juros, desconto à vista, últimas unidades, produto certificado, compra segura, entrega rápida, melhor preço do mercado, qualidade premium, atendimento especializado.
-
-**Pergunta 6**
-Quais formas de pesquisar seriam ruins para o negócio — ou seja, que atraem pessoas que não vão comprar?
-Exemplo: se vende computadores novos, pesquisas como "computador usado" ou "conserto de computador" são péssimas.
-
-Os termos da Pergunta 6 entram direto na lista de negativos (Passo 6), não como keywords.
 
 ### Passo 2 — Pesquisa de keywords (SpyFu + expansão)
 
@@ -111,20 +78,7 @@ Com base na análise das keywords dos concorrentes + frameworks acima, identific
 - São variações de alta intenção de termos já identificados (ex: se "churrasqueira a gás" apareceu, sugerir "churrasqueira a gás inox", "churrasqueira a gás embutir", "churrasqueira a gás preço")
 - Representam nichos específicos da Alvim Grill que não aparecem nos concorrentes (ex: lareira a gás, coifa inox)
 
-**4. Refinamento Gianini Palavreiro:**
-
-Com toda a lista acima, aplicar o método de refinamento:
-
-1. Expandir até 50 ideias de como as pessoas pesquisam para comprar o produto — pensar como o consumidor pensa, considerando desejos, medos e intenção real de compra
-2. Filtrar palavras ruins: eliminar qualquer termo que indique baixo nível de consciência de compra
-3. Priorizar por intenção de compra: colocar primeiro os termos de quem está mais próximo de comprar
-4. Montar tabela intermediária antes de avançar para a estrutura:
-
-| # | Ideia de Palavra-chave | Relação com o produto |
-|---|------------------------|----------------------|
-| 1 | ... | Produto direto / Solução de problema / Desejo do cliente / Concorrente / etc |
-
-Apresentar as sugestões separadas das keywords coletadas:
+Apresentar essas sugestões separadas das keywords coletadas:
 
 > "**Keywords dos concorrentes (validadas):**
 > [lista]
@@ -312,32 +266,13 @@ Frases curtas de até 25 caracteres destacando diferenciais. Exemplos: Frete Gr�
 
 ### Passo 5 — Validação com Keyword Planner
 
-Rodar o script de métricas históricas com todas as keywords consolidadas:
+Se o Google Ads Ratos estiver instalado (`~/.claude/skills/google-ads-ratos`), usar o subcomando de Keyword Planner pra buscar volume, concorrência e lances estimados de cada grupo. Adicionar os dados à estrutura.
 
-```bash
-cd /Users/MAC/ccos-alvimgrill/.claude/skills/google-ads && \
-python3 scripts/keyword_planner.py historical-metrics \
-  --keywords "termo1|termo2|termo3|..."
-```
+Se não estiver instalado:
 
-Processar o JSON retornado e extrair de cada keyword:
-- `avg_monthly_searches` — volume mensal médio
-- `low_top_of_page_bid_micros` / `high_top_of_page_bid_micros` — converter de micros para reais (÷ 1.000.000) e calcular a média como CPC estimado
-- `competition` — nível de concorrência (LOW / MEDIUM / HIGH)
-
-Apresentar resultado em tabela antes de montar a estrutura final:
-
-| Palavra-chave | Relação | Volume Mensal | CPC Médio | Concorrência |
-|---------------|---------|---------------|-----------|--------------|
-| ...           | ...     | ...           | R$ ...    | ...          |
-
-Regras da tabela:
-- Se um termo retornar volume zero ou não disponível, manter com "—"
-- CPC sempre em R$ com duas casas decimais
-- Termos com `competition: HIGH` e CPC elevado: sinalizar com nota
-- Não inventar volumes — usar apenas os dados reais do Keyword Planner
-
-Usar esses dados para refinar a estrutura de campanhas e conjuntos (Passo 4).
+> "Pra automatizar a etapa do Keyword Planner (volume de busca, CPC estimado, lances), instale o Google Ads Ratos:
+> `git clone https://github.com/duduesh/google-ads-ratos ~/.claude/skills/google-ads-ratos`
+> Por enquanto, preencha manualmente no Google Ads → Ferramentas → Planejador de palavras-chave."
 
 ### Passo 6 — Lista de negativos
 

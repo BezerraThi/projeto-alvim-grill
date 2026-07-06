@@ -1,20 +1,13 @@
 # Foco Atual — Alvim Grill
 
 ## Fase
-Entrega consultiva inicial. A Sonzai está apresentando um planejamento de tráfego pago para abrir o canal B2C do cliente.
+Entrada e estruturação no mercado B2C via tráfego pago.
 
 ## Prioridade principal
-Entregar o planejamento de tráfego B2C com:
-- Mapeamento de público-alvo e persona
-- Planejamento de palavras-chave (Google Ads)
-- Orçamento recomendado
-- Métricas principais
+Gerar tráfego qualificado e vendas no site alvimgrill.com.br através de Google Ads e Facebook Ads. Meta: estar minimamente estabelecido no B2C até agosto de 2026.
 
 ## O que pode esperar
-Criação de conteúdo para redes sociais começa depois da aprovação do planejamento de tráfego.
+Criação de conteúdo orgânico, estratégias de branding de longo prazo e qualquer coisa que não gere resultado direto em vendas no curto prazo.
 
 ## Contexto com prazo
-Sem prazo definido ainda.
-
----
-*Atualize esse arquivo quando suas prioridades mudarem.*
+Agosto de 2026 — ter uma base sólida de campanhas B2C rodando e convertendo.

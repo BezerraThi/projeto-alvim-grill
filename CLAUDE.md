@@ -1,33 +1,38 @@
-# Alvim Grill — Claude Code OS (Sonzai)
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
+# Alvim Grill — Claude Code OS
 
 ## O que é esse workspace
-Workspace da Sonzai dedicado ao cliente Alvim Grill. Centraliza planejamentos de tráfego pago, criação de conteúdo e entregas da conta.
+
+Workspace do Alvim para gestão e criação de campanhas de tráfego pago da Alvim Grill (alvimgrill.com.br). O Claude atua aqui como especialista em Google Ads e Facebook Ads, focado em gerar vendas B2C de churrasqueiras e lareiras.
 
 **Estrutura de pastas:**
-- `_contexto/` — empresa, preferências e estratégia do projeto
-- `planejamentos/trafego/` — keywords, personas, planejamentos de campanha
-- `planejamentos/apresentacoes/` — todas as apresentações HTML (slides, propostas visuais)
-- `dados/` — arquivos pra analisar (CSV, planilhas, prints)
-- `marca/` — design guide e identidade visual
+- `campanhas/google/` — estruturas de campanha, grupos de anúncios, copies de anúncio para Google Ads
+- `campanhas/meta/` — estruturas de campanha, públicos, copies e criativos para Facebook/Instagram Ads
+- `criativos/` — briefings e referências para peças visuais
+- `relatorios/` — análises de performance, relatórios de campanha
+- `dados/` — arquivos de dados, planilhas, exports de plataforma
+- `_contexto/` — contexto do negócio, preferências e estratégia atual
+- `marca/` — logo e guia de design
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
+- `tarefas.md` — lista de tarefas e próximos passos
 
 ## Sobre o negócio
-Thiago é sócio da Sonzai, agência de marketing focada em Growth. Cuida de tráfego pago e growth. Esse workspace gerencia a conta Alvim Grill dentro do fluxo da Sonzai.
 
-## Sobre o cliente — Alvim Grill
-Empresa estabelecida no B2B que vende churrasqueiras e equipamentos gourmet premium (ticket R$1.900 a R$4.600). Quer expandir para o mercado B2C.
+Alvim Grill vende churrasqueiras a carvão, a gás, lareiras e kits gourmet com coifa. Ticket médio entre R$1.900 e R$4.651. Negócio já consolidado no B2B — o foco atual é estruturar o canal B2C via tráfego pago.
 
-## O que fazemos aqui
-- Planejamento de tráfego pago (Google Ads e Meta Ads)
-- Criação de conteúdo para redes sociais
+## O que mais fazemos aqui
 
-## Tom de voz
-Direto, sem enrolação. Sem travessões.
+Criação e otimização de campanhas no Google Ads e Facebook Ads. Estruturação de públicos, copies de anúncio, análise de métricas e tomada de decisão de campanha.
 
 ## Ferramentas conectadas
-- Google Ads
-- Meta Ads
+
+Google Ads, Facebook Ads Manager, Google Tag Manager, Google Analytics 4
 
 ---
 
@@ -44,6 +49,37 @@ Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir
 Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo.
 
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
+
+---
+
+## Comandos disponíveis
+
+| Comando | O que faz |
+|---|---|
+| `/setup` | Onboarding interativo: cria todos os arquivos de contexto (~5 min) |
+| `/iniciar` | Carrega o contexto no início de uma nova sessão |
+| `/mapear` | Descobre processos repetitivos e cria skills personalizadas |
+| `/novo-projeto` | Cria um CLAUDE.md dedicado para um projeto específico |
+| `/atualizar` | Varre o estado atual e sincroniza os arquivos de contexto |
+| `/syncar` | Commit + push pra salvar tudo no GitHub |
+
+---
+
+## Skills de execução instaladas
+
+- **google-ads-ratos** (`.claude/skills/google-ads-ratos/`) — braço de execução no Google Ads via SDK oficial (GAQL). Lê/cria/edita/pausa campanhas, ad groups, keywords, RSAs, extensões e negativas; puxa insights e faz pesquisa de keywords (Keyword Planner). Conta padrão: Alvim Grill (`882-495-7655`) sob o MCC Sonzai (`525-827-6876`). Config em `.env` (fora do git). Dispara com `/google-ads-ratos`.
+
+---
+
+## Templates de skills disponíveis
+
+Antes de criar uma skill do zero, verificar se existe template em `templates/skills/`:
+
+- **carrossel** — carrossel para Instagram/TikTok (4 variantes de design)
+- **publicar-instagram** — publicação em redes sociais via Graph API ou Post for Me
+
+Para o catálogo completo de ferramentas integráveis (Playwright, Cloudflare, WebSearch, MCP servers), consultar `templates/ferramentas/catalogo.md`.
+Para o catálogo de skills globais pré-construídas (copy Schwartz, copy Ogilvy, frontend design, etc.), consultar `templates/skills/catalogo.md`.
 
 ---
 
