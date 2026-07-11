@@ -79,19 +79,6 @@
                                                             <table cellspacing="0" cellpadding="0" border="0" width="100%">
 
                                                                 {% for product in order.products %}
-                                                                {% if product.is_kit %}
-                                                                <tr>
-                                                                    <td width="65%" align="left" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; color: #1A1A1A; font-weight: 400; line-height: 22px; padding: 15px 10px; border-top: 1px solid #EEEEEE;">
-                                                                        <strong>{{ product.name }}</strong> x <small>{{ product.quantity }}</small><br>
-                                                                        {% for component in product.components %}
-                                                                            <span style="font-size: 12px; color: #505050;">{{ component.name }} {{ component.variationName }} x {{ component.total_quantity }}</span><br>
-                                                                        {% endfor %}
-                                                                    </td>
-                                                                    <td width="35%" align="right" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; color: #1A1A1A; font-weight: 400; line-height: 22px; padding: 15px 10px; border-top: 1px solid #EEEEEE;">
-                                                                        <strong>{{ product.priceFormat }}</strong> <small>cada um</small>
-                                                                    </td>
-                                                                </tr>
-                                                                {% else %}
                                                                 <tr>
                                                                     <td width="65%" align="left" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; color: #1A1A1A; font-weight: 400; line-height: 22px; padding: 15px 10px; border-top: 1px solid #EEEEEE;">
                                                                         <strong>{{ product.name ~ product.variationName }}</strong> x <small>{{ product.quantity }}</small>
@@ -100,7 +87,6 @@
                                                                         <strong>{{ product.priceFormat }}</strong> <small>cada um</small>
                                                                     </td>
                                                                 </tr>
-                                                                {% endif %}
                                                                 {% endfor %}
 
                                                                 <tr>

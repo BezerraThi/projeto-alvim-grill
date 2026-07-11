@@ -3,14 +3,7 @@ Olá {{ contact_name }}! Confirmamos o pagamento do pedido #{{ order.id }} na {{
 Resumo do pedido:
 
 {% for product in order.products %}
-{% if product.is_kit %}
-    {{ product.quantity }} {{ product.name }} - {{ product.priceFormat }} cada um
-{% for component in product.components %}
-        {{ component.name }} {{ component.variationName }} x {{ component.total_quantity }}
-{% endfor %}
-{% else %}
     {{ product.quantity }} {{ product.name ~ product.variationName }} - {{ product.priceFormat }} cada um
-{% endif %}
 {% endfor %}
 
 Total: {{ order.totalFormat }}

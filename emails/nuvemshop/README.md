@@ -46,6 +46,10 @@ Notas de formatação aprendidas no preview:
 - `order.discountCouponFormat`, `order.discountGatewayFormat` e `order.shippingDiscountFormat` já vêm com sinal negativo. Não adicionar "-" antes.
 - `promotion.total_discount_amount_short` vem SEM sinal. Manter o "- " antes.
 
+Limitações descobertas na validação de salvamento (testado em 2026-07):
+- `product.is_kit` e `product.components` NÃO passam na validação dos e-mails de pedido (confirmação de compra e de pagamento). A Nuvemshop rejeita o salvamento com erro genérico. Kits aparecem como uma linha única de produto, sem listar os componentes. Essas variáveis só funcionam no carrinho abandonado.
+- `order.shippingDiscount` / `order.shippingDiscountFormat` passam na validação normalmente.
+
 ## Assuntos sugeridos
 
 | E-mail | Assunto |
