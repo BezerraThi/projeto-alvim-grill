@@ -1,4 +1,4 @@
-Olá {{ contact_name }}! Confirmamos o pagamento do pedido #{{ order.id }} na {{ store_name }}. Agora vamos preparar tudo para a entrega.
+Olá {{ contact_name }}! Confirmamos o pagamento do pedido #{{ order.id }} na Alvim Grill. Agora vamos preparar tudo para a entrega.
 
 Resumo do pedido:
 
@@ -29,7 +29,7 @@ Acompanhe seu pedido pelo seguinte link:
 Avisamos você por e-mail assim que o pedido for despachado.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre seu pedido? É só responder este e-mail.

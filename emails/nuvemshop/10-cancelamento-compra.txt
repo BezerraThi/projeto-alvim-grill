@@ -1,6 +1,6 @@
 Olá {{ contact_name }},
 
-Seu pedido #{{ order.id }} na {{ store_name }} foi cancelado.
+Seu pedido #{{ order.id }} na Alvim Grill foi cancelado.
 
 {% if reason == 'customer' %}
 O cancelamento foi feito conforme você solicitou.
@@ -41,7 +41,7 @@ Se ainda não tiver conta, crie uma com o mesmo e-mail do pedido:
 Se tiver qualquer dúvida sobre o cancelamento, é só responder este e-mail que a gente te ajuda.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre o cancelamento? É só responder este e-mail.

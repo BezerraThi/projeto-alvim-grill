@@ -1,4 +1,4 @@
-Olá {{ customer.name }}! Falta só um passo para ativar sua conta na {{ store_name }}.
+Olá {{ customer.name }}! Falta só um passo para ativar sua conta na Alvim Grill.
 
 Ative sua conta pelo seguinte link:
 {{ url }}
@@ -6,7 +6,7 @@ Ative sua conta pelo seguinte link:
 Com a conta ativa você acompanha seus pedidos e finaliza suas próximas compras muito mais rápido.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Se você não criou uma conta em nosso site, desconsidere este e-mail.

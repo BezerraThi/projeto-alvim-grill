@@ -1,4 +1,4 @@
-Olá {{ customer.name }}! Recebemos um pedido para redefinir a senha da sua conta na {{ store_name }}.
+Olá {{ customer.name }}! Recebemos um pedido para redefinir a senha da sua conta na Alvim Grill.
 
 Crie uma nova senha pelo seguinte link:
 {{ url }}
@@ -6,7 +6,7 @@ Crie uma nova senha pelo seguinte link:
 Por segurança, este link tem validade limitada. Se ele expirar, é só solicitar a redefinição novamente no site.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Se você não solicitou a redefinição de senha, desconsidere este e-mail. Sua senha atual continua valendo.

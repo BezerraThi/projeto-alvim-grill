@@ -1,4 +1,4 @@
-Olá {{ contact_name }}! A nota fiscal do pedido #{{ order.id }} foi emitida na {{ store_name }}.
+Olá {{ contact_name }}! A nota fiscal do pedido #{{ order.id }} foi emitida na Alvim Grill.
 
 Produtos do pedido:
 
@@ -17,7 +17,7 @@ Guarde este documento. Ele é a sua garantia e pode ser solicitado em caso de tr
 Qualquer dúvida, é só responder este e-mail.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre sua nota fiscal? É só responder este e-mail.

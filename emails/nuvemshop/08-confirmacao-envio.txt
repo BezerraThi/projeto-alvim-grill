@@ -29,7 +29,7 @@ Rastreie seu pedido pelo seguinte link:
 Avisamos você quando a entrega for concluída.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre seu pedido? É só responder este e-mail.

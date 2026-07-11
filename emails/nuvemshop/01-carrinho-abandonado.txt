@@ -1,4 +1,4 @@
-Olá {{ cart.contact_name }}! Salvamos os itens que você escolheu na {{ store_name }}. Eles continuam no seu carrinho, prontos para você finalizar a compra.
+Olá {{ cart.contact_name }}! Salvamos os itens que você escolheu na Alvim Grill. Eles continuam no seu carrinho, prontos para você finalizar a compra.
 
 Estes são os produtos que você adicionou:
 
@@ -21,7 +21,7 @@ Os preços e o estoque podem mudar, então não deixe para depois.
 Ficou com dúvida sobre o produto, frete ou formas de pagamento? É só responder este e-mail que a gente te ajuda.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Se você não criou um carrinho em nosso site, desconsidere este e-mail.

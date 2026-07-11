@@ -1,4 +1,4 @@
-Olá! Seu pedido #{{ order.id }} foi registrado com sucesso na {{ store_name }}.
+Olá! Seu pedido #{{ order.id }} foi registrado com sucesso na Alvim Grill.
 
 Resumo do pedido:
 
@@ -52,7 +52,7 @@ Acompanhe seu pedido pelo seguinte link:
 Assim que houver novidades sobre o pedido, avisamos você por e-mail.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre seu pedido? É só responder este e-mail.

@@ -5,7 +5,7 @@ Ao retirar, tenha em mãos um documento com foto e o número do pedido.
 Qualquer dúvida sobre horário ou endereço de retirada, é só responder este e-mail.
 
 Atenciosamente,
-{{ store_name }}
+Alvim Grill
 
 * * *
 Dúvidas sobre seu pedido? É só responder este e-mail.
