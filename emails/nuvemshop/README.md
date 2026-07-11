@@ -1,10 +1,13 @@
 # E-mails transacionais Nuvemshop — Alvim Grill
 
-Templates HTML personalizados para os e-mails automáticos da loja (Configurações > E-mails no painel da Nuvemshop).
+Templates para os e-mails automáticos da loja (Configurações > E-mails no painel da Nuvemshop). Cada e-mail tem duas versões:
+
+- `.html` — versão principal, cola no editor HTML
+- `.txt` — versão em texto puro (backup exibido quando o cliente de e-mail não carrega HTML), cola no campo de texto do mesmo editor
 
 ## Identidade aplicada
 
-- Header escuro (#1A1A1A) com wordmark ALVIM GRILL (GRILL em laranja)
+- Header escuro (#1A1A1A) com a logo Alvim Grill (hospedada no CDN da Nuvemshop, mesma imagem usada no site)
 - Cor de destaque e botões: laranja #E8610A com texto branco
 - Card branco com cantos arredondados 8px, fundo cinza claro #F5F5F5
 - Barra superior laranja de 4px
@@ -14,9 +17,9 @@ Templates HTML personalizados para os e-mails automáticos da loja (Configuraç�
 
 1. No painel da Nuvemshop: **Configurações > E-mails**
 2. Clique em **Editar conteúdo** no e-mail desejado
-3. Abra o modo HTML do editor
-4. Apague o conteúdo atual e cole o HTML do arquivo correspondente
-5. **Antes de salvar**, compare as variáveis do template com o painel **"Explicação do código"** na lateral do editor. Se alguma variável do painel tiver grafia diferente, ajuste no HTML
+3. Abra o modo HTML do editor, apague o conteúdo atual e cole o `.html` correspondente
+4. No campo de versão em texto do mesmo editor, cole o `.txt` correspondente
+5. **Antes de salvar**, compare as variáveis do template com o painel **"Explicação do código"** na lateral do editor. Se alguma variável do painel tiver grafia diferente, ajuste nos dois arquivos
 6. Salve e envie um e-mail de teste (quando disponível) ou faça um pedido de teste
 
 ## Status de cada template
@@ -57,10 +60,10 @@ Os 3 templates sem doc pública têm um comentário `<!-- ATENCAO -->` no topo d
 
 Obs: só use variável no assunto se o campo de assunto do editor aceitar (o painel "Explicação do código" indica).
 
-## Trocar o wordmark de texto pela logo
+## Logo no header
 
-O header usa o texto "ALVIM GRILL" para funcionar sem depender de imagem hospedada. Para usar a logo (marca/logo-alvimgrill-laranja-branca.png, que já é laranja e branca e combina com o fundo escuro do header):
+O header de todos os templates usa a logo oficial da loja hospedada no CDN da Nuvemshop (a mesma imagem que o site alvimgrill.com.br carrega):
 
-1. Hospede a imagem em uma URL pública (ex: suba como imagem em uma página da própria Nuvemshop e copie a URL do CDN)
-2. Em cada template, substitua o `<span>` dentro do header por:
-   `<img src="URL_DA_LOGO" alt="Alvim Grill" width="160" style="display:block; margin:0 auto; height:auto;" />`
+`https://dcdn-us.mitiendanube.com/stores/007/797/591/themes/common/logo-7026286291621255565-1781473397-22b2a674a591f2f34fe1b9c422ef3ed31781473397.png`
+
+Atenção: se a logo do site for trocada no futuro, essa URL pode mudar. Nesse caso, pegue a nova URL no código-fonte da home da loja (img do header) e substitua nos 11 arquivos `.html`.

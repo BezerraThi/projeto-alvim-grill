@@ -1,0 +1,12 @@
+Olá {{ contact_name }}! Recebemos um pedido para redefinir a senha da sua conta na {{ store_name }}.
+
+Crie uma nova senha pelo seguinte link:
+{{ url }}
+
+Por segurança, este link tem validade limitada. Se ele expirar, é só solicitar a redefinição novamente no site.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Se você não solicitou a redefinição de senha, desconsidere este e-mail. Sua senha atual continua valendo.

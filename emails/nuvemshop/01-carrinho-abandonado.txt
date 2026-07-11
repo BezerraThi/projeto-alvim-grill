@@ -1,0 +1,27 @@
+Olá {{ cart.contact_name }}! Salvamos os itens que você escolheu na {{ store_name }}. Eles continuam no seu carrinho, prontos para você finalizar a compra.
+
+Estes são os produtos que você adicionou:
+
+{% for product in cart.items %}
+{% if product.is_kit %}
+    {{product.quantity}} {{product.name}}
+{% for component in product.components %}
+        {{ component.name }} {{ component.variationName }} x {{ component.total_quantity }}
+{% endfor %}
+{% else %}
+    {{product.quantity}} {{product.name}}
+{% endif %}
+{% endfor %}
+
+Falta pouco! Conclua sua compra pelo seguinte link:
+{{ cart.abandoned_checkout_url }}
+
+Os preços e o estoque podem mudar, então não deixe para depois.
+
+Ficou com dúvida sobre o produto, frete ou formas de pagamento? É só responder este e-mail que a gente te ajuda.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Se você não criou um carrinho em nosso site, desconsidere este e-mail.

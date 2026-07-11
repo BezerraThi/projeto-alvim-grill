@@ -1,0 +1,11 @@
+Olá! O pedido #{{ order.id }} foi entregue. Esperamos que você aproveite muito.
+
+Qualquer dúvida sobre instalação, montagem ou uso do produto, é só responder este e-mail que a gente te ajuda.
+
+Se puder, conte para a gente como foi sua experiência de compra. Seu feedback ajuda muito a melhorar a loja.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Dúvidas sobre seu pedido? É só responder este e-mail.

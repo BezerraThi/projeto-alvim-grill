@@ -1,0 +1,35 @@
+Olá {{ contact_name }}! Confirmamos o pagamento do pedido #{{ order.id }} na {{ store_name }}. Agora vamos preparar tudo para a entrega.
+
+Resumo do pedido:
+
+{% for product in order.products %}
+    {{ product.quantity }} {{ product.name ~ product.variationName }} - {{ product.priceFormat }} cada um
+{% endfor %}
+
+Total: {{ order.totalFormat }}
+
+{% if order.shipping_pickup_type == 'ship' %}
+Endereço de entrega:
+{{ order.shipping_address }}{% if order.shipping_floor %}, {{ order.shipping_floor }}{% endif %}
+{% if order.shipping_locality %}{{ order.shipping_locality }}, {% endif %}{{ order.shipping_city }} - {{ order.shipping_province }}
+CEP {{ order.shipping_zipcode }} - {{ order.shipping_country }}
+{% elseif order.shipping_pickup_type == 'pickup' and order.shipping_extra.store_branch %}
+Ponto de retirada:
+{{ order.shipping_extra.store_branch.name }}
+{{ order.shipping_extra.store_branch.extra }}
+{% elseif order.shipping_option %}
+Forma de entrega: {{ order.shipping_option }}
+{% endif %}
+
+{% if order.statusPageUrl %}
+Acompanhe seu pedido pelo seguinte link:
+{{ order.statusPageUrl }}
+{% endif %}
+
+Avisamos você por e-mail assim que o pedido for despachado.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Dúvidas sobre seu pedido? É só responder este e-mail.

@@ -1,0 +1,12 @@
+Olá {{ customer.name }}! Falta só um passo para ativar sua conta na {{ store_name }}.
+
+Ative sua conta pelo seguinte link:
+{{ url }}
+
+Com a conta ativa você acompanha seus pedidos e finaliza suas próximas compras muito mais rápido.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Se você não criou uma conta em nosso site, desconsidere este e-mail.

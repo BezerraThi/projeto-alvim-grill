@@ -1,0 +1,11 @@
+Olá! A nota fiscal do pedido #{{ order.id }} foi emitida e está disponível neste e-mail.
+
+Guarde este documento. Ele é a sua garantia e pode ser solicitado em caso de troca ou assistência.
+
+Qualquer dúvida, é só responder este e-mail.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Dúvidas sobre sua nota fiscal? É só responder este e-mail.

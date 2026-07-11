@@ -1,0 +1,47 @@
+Olá {{ contact_name }},
+
+Seu pedido #{{ order.id }} na {{ store_name }} foi cancelado.
+
+{% if reason == 'customer' %}
+O cancelamento foi feito conforme você solicitou.
+{% elseif reason == 'inventory' %}
+Infelizmente um ou mais produtos do pedido não estavam mais disponíveis em estoque.
+{% elseif reason == 'fraud' %}
+O pagamento do pedido não foi aprovado na análise de segurança.
+{% elseif reason == 'expired' %}
+O prazo para pagamento expirou.
+{% elseif reason == 'automatic' %}
+O pagamento não foi concluído dentro do prazo e o pedido foi cancelado automaticamente.
+{% elseif reason == 'refund' %}
+O pagamento foi reembolsado.
+{% elseif reason == 'other' and custom_reason %}
+Motivo do cancelamento: {{ custom_reason }}
+{% else %}
+{% endif %}
+
+{% if payment_status == 'voided' %}
+A cobrança foi anulada e nenhum valor será debitado.
+{% endif %}
+{% if payment_status == 'refunded' %}
+Sobre o reembolso:
+{% for refund in refunds %}
+{% if refund.type == 'store_credit' %}
+{{ refund.amount }} foi devolvido como crédito na loja. Acesse sua conta para usar na próxima compra:
+{{ customer_urls.login }}
+Se ainda não tiver conta, crie uma com o mesmo e-mail do pedido:
+{{ customer_urls.register }}
+{% elseif refund.card_last_digits %}
+{{ refund.amount }} foi estornado no cartão com final {{ refund.card_last_digits }}. O prazo para o valor aparecer na fatura depende da operadora do cartão.
+{% else %}
+{{ refund.amount }} foi reembolsado.
+{% endif %}
+{% endfor %}
+{% endif %}
+
+Se tiver qualquer dúvida sobre o cancelamento, é só responder este e-mail que a gente te ajuda.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Dúvidas sobre o cancelamento? É só responder este e-mail.

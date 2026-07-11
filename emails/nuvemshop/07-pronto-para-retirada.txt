@@ -1,0 +1,11 @@
+Olá {{ contact_name }}! Boa notícia: o pedido #{{ order.id }} já está separado, embalado e esperando por você no ponto de retirada.
+
+Ao retirar, tenha em mãos um documento com foto e o número do pedido.
+
+Qualquer dúvida sobre horário ou endereço de retirada, é só responder este e-mail.
+
+Atenciosamente,
+{{ store_name }}
+
+* * *
+Dúvidas sobre seu pedido? É só responder este e-mail.
