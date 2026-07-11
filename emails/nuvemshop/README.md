@@ -26,21 +26,25 @@ Templates para os e-mails automáticos da loja (Configurações > E-mails no pai
 
 | Arquivo | E-mail | Variáveis |
 |---|---|---|
-| 01-carrinho-abandonado.html | Carrinhos abandonados | OK, confirmadas no painel da loja |
-| 02-ativacao-conta.html | Ativação da conta | OK, baseadas no template atual da loja |
-| 03-mudanca-senha.html | Mudança de senha | Baseadas na doc oficial, conferir painel |
-| 04-boas-vindas.html | Boas-vindas | Baseadas na doc oficial, conferir painel |
-| 05-confirmacao-compra.html | Confirmação de compra | Baseadas na doc oficial, conferir painel |
-| 06-confirmacao-pagamento.html | Confirmação de pagamento | Baseadas na doc oficial, conferir painel |
-| 07-pronto-para-retirada.html | Pronto para retirada | **SEM doc pública. Conferir painel antes de salvar** |
-| 08-confirmacao-envio.html | Confirmação de envio | Baseadas na doc oficial, conferir painel |
-| 09-confirmacao-entrega.html | Confirmação de entrega | **SEM doc pública. Conferir painel antes de salvar** |
-| 10-cancelamento-compra.html | Cancelamento de compra | Baseadas na doc oficial, conferir painel |
-| 11-nota-fiscal.html | Nota fiscal | **SEM doc pública. Conferir painel antes de salvar** |
+| 01-carrinho-abandonado | Carrinhos abandonados | OK, confirmadas no painel da loja |
+| 02-ativacao-conta | Ativação da conta | OK, confirmadas no painel da loja |
+| 03-mudanca-senha | Mudança de senha | OK, confirmadas no painel da loja |
+| 04-boas-vindas | Boas-vindas | OK, confirmadas no painel da loja |
+| 05-confirmacao-compra | Confirmação de compra | OK, confirmadas no painel da loja |
+| 06-confirmacao-pagamento | Confirmação de pagamento | OK, confirmadas no painel da loja |
+| 07-pronto-para-retirada | Pronto para retirada | **PENDENTE. Conferir painel "Explicação do código" antes de salvar** |
+| 08-confirmacao-envio | Confirmação de envio | OK, confirmadas no painel da loja |
+| 09-confirmacao-entrega | Confirmação de entrega | OK, confirmadas no painel da loja |
+| 10-cancelamento-compra | Cancelamento de compra | OK, confirmadas no painel da loja |
+| 11-nota-fiscal | Nota fiscal | OK, confirmadas no painel da loja |
 
 Fonte da doc oficial (HTML original + variáveis): https://docs.nuvemshop.com.br/help/e-mails-automaticos
 
-Os 3 templates sem doc pública têm um comentário `<!-- ATENCAO -->` no topo do arquivo dizendo o que conferir. Uma foto do painel "Explicação do código" de cada um resolve: com ela dá pra ajustar as variáveis com precisão.
+Só o **Pronto para retirada** ainda usa variáveis não confirmadas ({{ contact_name }}, {{ order.id }}); o arquivo tem um comentário `<!-- ATENCAO -->` no topo. Uma foto do painel "Explicação do código" dele resolve.
+
+Notas de formatação aprendidas no preview:
+- `order.discountCouponFormat`, `order.discountGatewayFormat` e `order.shippingDiscountFormat` já vêm com sinal negativo. Não adicionar "-" antes.
+- `promotion.total_discount_amount_short` vem SEM sinal. Manter o "- " antes.
 
 ## Assuntos sugeridos
 

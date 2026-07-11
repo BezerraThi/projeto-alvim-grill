@@ -1,4 +1,4 @@
-Olá {{ contact_name }}! Recebemos um pedido para redefinir a senha da sua conta na {{ store_name }}.
+Olá {{ customer.name }}! Recebemos um pedido para redefinir a senha da sua conta na {{ store_name }}.
 
 Crie uma nova senha pelo seguinte link:
 {{ url }}

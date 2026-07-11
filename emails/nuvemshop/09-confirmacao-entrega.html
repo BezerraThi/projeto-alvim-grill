@@ -1,6 +1,3 @@
-<!-- ATENCAO: as variaveis deste e-mail nao estao na documentacao publica da Nuvemshop.
-     Antes de salvar, abra o painel "Explicacao do codigo" no editor deste e-mail e confira
-     se {{ order.id }} existe. Se o painel mostrar variaveis diferentes, substitua aqui antes de colar. -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" lang="pt">
     <head>
@@ -74,7 +71,25 @@
                                             <td valign="top" class="bodyContent">
                                                 <h1>Pedido entregue!</h1>
 
-                                                <p>Olá! O pedido <strong>#{{ order.id }}</strong> foi entregue. Esperamos que você aproveite muito.</p>
+                                                <p>Olá {{ order.shipping_name }}! O pedido <strong>#{{ order.id }}</strong> foi entregue. Esperamos que você aproveite muito.</p>
+
+                                                {% if order.shipping_pickup_type == 'ship' %}
+                                                <p>
+                                                    <strong>Entregue no endereço:</strong><br>
+                                                    {{ order.shipping_address }}{% if order.shipping_floor %}, {{ order.shipping_floor }}{% endif %}<br>
+                                                    {% if order.shipping_locality %}{{ order.shipping_locality }}, {% endif %}{{ order.shipping_city }} - {{ order.shipping_province }}<br>
+                                                    CEP {{ order.shipping_zipcode }} - {{ order.shipping_country }}
+                                                </p>
+                                                {% elseif order.shipping_pickup_type == 'pickup' and order.shipping_extra.store_branch %}
+                                                <p>
+                                                    <strong>Retirado em:</strong><br>
+                                                    {{ order.shipping_extra.store_branch.name }}<br>
+                                                    {{ order.shipping_extra.store_branch.extra }}
+                                                </p>
+                                                {% elseif order.shipping_option %}
+                                                <p><strong>Forma de entrega:</strong> {{ order.shipping_option }}</p>
+                                                {% endif %}
+
                                                 <p>Qualquer dúvida sobre instalação, montagem ou uso do produto, é só responder este e-mail que a gente te ajuda.</p>
                                                 <p>Se puder, conte para a gente como foi sua experiência de compra. Seu feedback ajuda muito a melhorar a loja.</p>
                                                 <p>

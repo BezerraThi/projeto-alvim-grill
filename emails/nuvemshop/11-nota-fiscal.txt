@@ -1,4 +1,16 @@
-Olá! A nota fiscal do pedido #{{ order.id }} foi emitida e está disponível neste e-mail.
+Olá {{ contact_name }}! A nota fiscal do pedido #{{ order.id }} foi emitida na {{ store_name }}.
+
+Produtos do pedido:
+
+{% for product in order.products %}
+    {{ product.quantity }} {{ product.name ~ product.variationName }} - {{ product.priceFormat }} cada um
+{% endfor %}
+
+Baixe sua nota fiscal em PDF pelo seguinte link:
+{{ invoice_pdf_url }}
+
+Se precisar do arquivo XML:
+{{ invoice_xml_url }}
 
 Guarde este documento. Ele é a sua garantia e pode ser solicitado em caso de troca ou assistência.
 

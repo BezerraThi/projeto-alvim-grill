@@ -1,4 +1,17 @@
-Olá! O pedido #{{ order.id }} foi entregue. Esperamos que você aproveite muito.
+Olá {{ order.shipping_name }}! O pedido #{{ order.id }} foi entregue. Esperamos que você aproveite muito.
+
+{% if order.shipping_pickup_type == 'ship' %}
+Entregue no endereço:
+{{ order.shipping_address }}{% if order.shipping_floor %}, {{ order.shipping_floor }}{% endif %}
+{% if order.shipping_locality %}{{ order.shipping_locality }}, {% endif %}{{ order.shipping_city }} - {{ order.shipping_province }}
+CEP {{ order.shipping_zipcode }} - {{ order.shipping_country }}
+{% elseif order.shipping_pickup_type == 'pickup' and order.shipping_extra.store_branch %}
+Retirado em:
+{{ order.shipping_extra.store_branch.name }}
+{{ order.shipping_extra.store_branch.extra }}
+{% elseif order.shipping_option %}
+Forma de entrega: {{ order.shipping_option }}
+{% endif %}
 
 Qualquer dúvida sobre instalação, montagem ou uso do produto, é só responder este e-mail que a gente te ajuda.
 
