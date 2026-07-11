@@ -3,7 +3,14 @@ Olá! Seu pedido #{{ order.id }} foi registrado com sucesso na {{ store_name }}.
 Resumo do pedido:
 
 {% for product in order.products %}
+{% if product.is_kit %}
+    {{ product.quantity }} {{ product.name }} - {{ product.priceFormat }} cada um
+{% for component in product.components %}
+        {{ component.name }} {{ component.variationName }} x {{ component.total_quantity }}
+{% endfor %}
+{% else %}
     {{ product.quantity }} {{ product.name ~ product.variationName }} - {{ product.priceFormat }} cada um
+{% endif %}
 {% endfor %}
 {% if order.promotional_discount %}
 {% for promotion in order.promotional_discount.promotions_applied %}
@@ -11,13 +18,16 @@ Promoção {{ promotion.scope_value_name }}: - {{ promotion.total_discount_amoun
 {% endfor %}
 {% endif %}
 {% if order.discountCoupon > 0 %}
-Cupom de desconto ({{ order.coupon }}): - {{ order.discountCouponFormat }}
+Cupom de desconto ({{ order.coupon }}): {{ order.discountCouponFormat }}
 {% endif %}
 {% if order.discountGateway > 0 %}
-Desconto {{ order.paymentMethod }}: - {{ order.discountGatewayFormat }}
+Desconto {{ order.paymentMethod }}: {{ order.discountGatewayFormat }}
 {% endif %}
 {% if order.shipping_pickup_type != 'non-shippable' and order.show_shipping_price %}
 Frete: {% if order.shipping == 0 %}Grátis{% else %}{{ order.shippingFormat }}{% endif %}
+{% if order.shippingDiscount > 0 %}
+Desconto no frete: {{ order.shippingDiscountFormat }}
+{% endif %}
 {% endif %}
 
 Total: {{ order.totalFormat }}
