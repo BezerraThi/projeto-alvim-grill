@@ -61,6 +61,45 @@
 | Potência de até 60.000 BTUs e queimadores fundidos em inox 304. Alta durabilidade. | 82 |
 | Fabricadas em inox 304, que resiste à maresia. Ideal para casas de praia e áreas externas. | 90 |
 
+## Títulos — filtro premium / poder de compra (rodada 3, grupo "churrasqueiras" geral)
+
+> Objetivo: qualificar o clique com gatilhos de preço e material premium.
+> Keywords do grupo: alvenaria preço, comprar churrasqueira, pré moldada, de parede, lojas de churrasqueiras, venda de churrasqueira, carvão sem fumaça, preço da churrasqueira grill, para apartamento.
+
+| Título | Chars | Função |
+|---|---|---|
+| Inox a partir de R$ 4.485 | 25 | filtro de preço |
+| De R$ 1.900 até R$ 18 mil | 25 | filtro de preço |
+| Linha premium até R$ 18 mil | 27 | filtro de preço |
+| Parcele em 12x sem juros | 24 | oferta |
+| Churrasqueira premium em inox | 29 | premium |
+| Churrasqueiras de alto padrão | 29 | premium |
+| Linha premium em aço inox 304 | 29 | premium |
+| Churrasqueira de luxo em inox | 29 | premium |
+| Acabamento de alto padrão | 25 | premium |
+| Grelha maciça de 6 a 8 mm | 25 | premium |
+| Inox 304 resistente à maresia | 29 | premium |
+| Área gourmet de alto padrão | 27 | premium |
+| Troque a alvenaria por inox | 27 | keyword alvenaria/pré moldada/parede |
+| Carvão sem fumaça com coifa | 27 | keyword carvão sem fumaça |
+| Kit gourmet com coifa inclusa | 29 | keyword carvão sem fumaça/apartamento |
+| Churrasqueira para apartamento | 30 | keyword apartamento |
+| Loja premium de churrasqueiras | 30 | keyword lojas de churrasqueiras |
+| Referência em churrasqueiras | 28 | keyword lojas/venda |
+
+## Descrições — filtro premium (rodada 3)
+
+| Descrição | Chars |
+|---|---|
+| Churrasqueiras premium em inox 304, de R$ 4.485 a R$ 18.588. Para quem exige acabamento. | 88 |
+| Substitua a churrasqueira de alvenaria por inox 304: sem trinca, sem fuligem, sem obra. | 87 |
+| Kit gourmet com coifa e braseiro inox: churrasco a carvão sem fumaça no seu apartamento. | 88 |
+| Atendimento especializado e entrega em todo o Brasil. Parcele em até 12x sem juros. | 83 |
+
+## Negativas sugeridas (filtro de público barateiro)
+
+barata, promoção, usada, mercado livre, shopee, como fazer, caseira, tijolo, projeto de alvenaria
+
 ## Regras pra não reprovar (política editorial do Google)
 
 - Maiúscula só na primeira letra do título/frase e em nomes próprios (Alvim Grill, Brasil, São Paulo).
