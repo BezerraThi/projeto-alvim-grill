@@ -160,6 +160,9 @@
                                                 </table>
 
                                                 <h2>Sobre o pagamento</h2>
+                                                {% if order.paymentMethod %}
+                                                <p><strong>Forma de pagamento:</strong> {{ order.paymentMethod }}</p>
+                                                {% endif %}
                                                 <p><strong>Cartão de crédito:</strong> seu pagamento está sendo processado. Assim que for aprovado, você recebe a confirmação por e-mail e o pedido entra em preparação. Não precisa fazer mais nada.</p>
                                                 {% if order.statusPageUrl %}
                                                 <p><strong>PIX:</strong> falta pouco para garantir seu pedido! Abra a página de acompanhamento no botão abaixo, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora.</p>
