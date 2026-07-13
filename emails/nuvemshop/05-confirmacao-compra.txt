@@ -25,13 +25,17 @@ Desconto no frete: {{ order.shippingDiscountFormat }}
 
 Total: {{ order.totalFormat }}
 
+Sobre o pagamento:
+
+Cartão de crédito: seu pagamento está sendo processado. Assim que for aprovado, você recebe a confirmação por e-mail e o pedido entra em preparação. Não precisa fazer mais nada.
+
 {% if order.statusPageUrl %}
-Escolheu pagar com PIX? Falta pouco para garantir seu pedido! Abra a página de acompanhamento, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora:
+PIX: falta pouco para garantir seu pedido! Abra a página de acompanhamento, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora:
 {{ order.statusPageUrl }}
 {% endif %}
 
 {% if order.boleto_url %}
-Pagamento por boleto. Visualize e imprima seu boleto pelo seguinte link:
+Boleto: visualize e imprima seu boleto pelo seguinte link:
 {{ order.boleto_url }}
 Assim que o pagamento for confirmado, seu pedido entra em preparação.
 {% endif %}
