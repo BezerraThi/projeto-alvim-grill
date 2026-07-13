@@ -159,6 +159,10 @@
                                                     </tr>
                                                 </table>
 
+                                                {% if order.statusPageUrl %}
+                                                <p style="margin-top: 20px;"><strong>Escolheu pagar com PIX?</strong> Falta pouco para garantir seu pedido! Abra a página de acompanhamento no botão abaixo, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora e seu pedido já entra em preparação.</p>
+                                                {% endif %}
+
                                                 {% if order.boleto_url %}
                                                 <p style="margin-top: 20px;"><strong>Pagamento por boleto:</strong> <a href="{{ order.boleto_url }}" target="_blank">clique aqui para visualizar e imprimir seu boleto</a>. Assim que o pagamento for confirmado, seu pedido entra em preparação.</p>
                                                 {% endif %}

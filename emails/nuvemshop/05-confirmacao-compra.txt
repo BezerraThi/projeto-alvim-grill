@@ -25,6 +25,11 @@ Desconto no frete: {{ order.shippingDiscountFormat }}
 
 Total: {{ order.totalFormat }}
 
+{% if order.statusPageUrl %}
+Escolheu pagar com PIX? Falta pouco para garantir seu pedido! Abra a página de acompanhamento, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora:
+{{ order.statusPageUrl }}
+{% endif %}
+
 {% if order.boleto_url %}
 Pagamento por boleto. Visualize e imprima seu boleto pelo seguinte link:
 {{ order.boleto_url }}
