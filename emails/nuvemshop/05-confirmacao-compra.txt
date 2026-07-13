@@ -30,11 +30,18 @@ Sobre o pagamento:
 {% if order.paymentMethod %}
 Forma de pagamento: {{ order.paymentMethod }}
 {% endif %}
+{% if order.paymentMethod == 'Pix' or order.paymentMethod == 'PIX' or order.paymentMethod == 'pix' %}
+Seu código PIX foi gerado. Falta pouco para garantir seu pedido! Abra a página de acompanhamento, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora:
+{{ order.statusPageUrl }}
+{% elseif order.paymentMethod == 'Cartão de Crédito' or order.paymentMethod == 'Cartão de crédito' or order.paymentMethod == 'cartão de crédito' %}
+Seu pagamento no cartão está sendo processado. Assim que for aprovado, você recebe a confirmação por e-mail e o pedido entra em preparação. Não precisa fazer mais nada.
+{% else %}
 Cartão de crédito: seu pagamento está sendo processado. Assim que for aprovado, você recebe a confirmação por e-mail e o pedido entra em preparação. Não precisa fazer mais nada.
 
 {% if order.statusPageUrl %}
 PIX: falta pouco para garantir seu pedido! Abra a página de acompanhamento, copie o código PIX e pague pelo app do seu banco. A aprovação é na hora:
 {{ order.statusPageUrl }}
+{% endif %}
 {% endif %}
 
 {% if order.boleto_url %}
