@@ -1,6 +1,6 @@
 # Anúncio Meta Ads — Criativo 06 Storie(1) (churrasqueira Atlanta, frete grátis)
 
-> Referência: criativos/06 - Storie(1).png
+> Referência: criativos/06 - Storie(1).png (formato Stories) e criativos/12.png (mesma peça, formato Feed/quadrado)
 > Produto: churrasqueira a gás em inox 3 queimadores modelo Atlanta (dados/produtos-ecommerce.md, PRODUTO 4, SKU ALVIM003, R$ 9.588,00).
 > Gancho do criativo: frete grátis para todo o Brasil.
 
