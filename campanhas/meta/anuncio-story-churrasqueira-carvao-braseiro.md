@@ -51,3 +51,4 @@ Frete grátis para todo o Brasil e parcelamento em até 12x sem juros
 ## Pendência
 
 - Confirmar a fonte da claim "30% menos carvão" (teste interno, ficha técnica) antes de usar em outras peças ou em anúncios de busca — hoje só está documentada porque já está publicada nesse criativo.
+- **Atualização**: o criativo Instagram Story 7 confirma que esse produto é o Kit Gourmet Galvanizada Preta - Pequeno (SKU ALVIM011, R$ 4.510,00) — ver campanhas/meta/anuncio-story7-kit-gourmet-preta-carvao-preco.md.
