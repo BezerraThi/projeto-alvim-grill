@@ -1,6 +1,6 @@
 # Anúncio Meta Ads — Criativo 04 (Glass Falesa, pronta entrega)
 
-> Referência: criativos/04.png
+> Referência: criativos/04.png e criativos/Instagram story - 2 (1).png (mesma mensagem, versão Stories com ícones de frete grátis e parcelamento 12x sem juros adicionados)
 > Produto: churrasqueira a gás modelo Glass Falesa (linha Glass — moldura em vidro temperado, medidor de temperatura, ignição bivolt 110-220V, GLP ou GN). Ver dados/produtos-ecommerce.md, PRODUTO 2.
 > Gatilhos do criativo: pronta entrega, sem fumaça, qualidade e garantia total.
 
@@ -45,6 +45,20 @@ Modelo Glass Falesa
 
 **Descrição — longa** (73 chars)
 Feita em inox, com qualidade e garantia para você comprar com confiança
+
+## Set 4 — Frete + parcelamento (específico da versão Stories)
+
+**Texto principal** (140 chars)
+Churrasqueira a Gás Glass Falesa em pronta entrega, com frete grátis para todo o Brasil e parcelamento em até 12x sem juros.
+
+**Título** (26 chars)
+Glass Falesa: frete grátis
+
+**Descrição — curta** (28 chars)
+Parcele em até 12x sem juros
+
+**Descrição — longa** (65 chars)
+Pronta entrega, frete grátis e parcelamento facilitado em 12x
 
 > Nota: campo "Descrição" no Meta tem limite oficial de ~27-30 caracteres pra exibir inteiro no Feed/Stories, mas em Marketplace, Busca e in-stream video aceita até ~90-150 chars. Adicione as duas versões como opções — o Meta testa e escolhe a melhor por posicionamento.
 
