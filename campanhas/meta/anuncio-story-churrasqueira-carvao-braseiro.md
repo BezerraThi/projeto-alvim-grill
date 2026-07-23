@@ -12,8 +12,11 @@ Churrasqueira a carvão embutida, com coifa e portas de vidro. Um braseiro espec
 **Título** (34 chars)
 Consome 30% menos carvão
 
-**Descrição** (29 chars)
+**Descrição — curta** (29 chars)
 Frete grátis + 12x sem juros
+
+**Descrição — longa** (68 chars)
+Braseiro especial reduz o consumo de carvão e protege sua bancada
 
 ## Set 2 — Visual (embutida, design, ambiente)
 
@@ -23,8 +26,11 @@ Uma churrasqueira que vira o centro da sua área gourmet: embutida na bancada, c
 **Título** (38 chars)
 Churrasqueira a carvão embutida
 
-**Descrição** (27 chars)
+**Descrição — curta** (27 chars)
 Design com coifa e vidro
+
+**Descrição — longa** (66 chars)
+Design premium com coifa e vidro temperado para sua área gourmet
 
 ## Set 3 — Oferta (frete + parcelamento)
 
@@ -34,8 +40,13 @@ Sua churrasqueira a carvão com braseiro que economiza 30% e protege a bancada. 
 **Título** (37 chars)
 Braseiro que economiza carvão
 
-**Descrição** (28 chars)
+**Descrição — curta** (28 chars)
 Frete grátis para todo Brasil
+
+**Descrição — longa** (69 chars)
+Frete grátis para todo o Brasil e parcelamento em até 12x sem juros
+
+> Nota: campo "Descrição" no Meta tem limite oficial de ~27-30 caracteres pra exibir inteiro no Feed/Stories, mas em Marketplace, Busca e in-stream video aceita até ~90-150 chars. Adicione as duas versões como opções — o Meta testa e escolhe a melhor por posicionamento.
 
 ## Pendência
 

@@ -12,8 +12,11 @@ Churrasqueira a gás Glass Falesa, em pronta entrega. Sem fumaça, com moldura e
 **Título** (30 chars)
 Glass Falesa: pronta entrega
 
-**Descrição** (26 chars)
+**Descrição — curta** (26 chars)
 Sem fumaça, com garantia
+
+**Descrição — longa** (70 chars)
+Modelo Glass Falesa disponível em pronta entrega com garantia total
 
 ## Set 2 — Benefício (sem fumaça)
 
@@ -23,8 +26,11 @@ Chega de fumaça na sua área gourmet. A churrasqueira a gás Glass Falesa tem m
 **Título** (31 chars)
 Churrasqueira a gás sem fumaça
 
-**Descrição** (23 chars)
+**Descrição — curta** (23 chars)
 Pronta entrega já
+
+**Descrição — longa** (64 chars)
+Sem fumaça na sua área gourmet, com moldura em vidro temperado
 
 ## Set 3 — Confiança (qualidade e garantia)
 
@@ -34,8 +40,13 @@ Qualidade e garantia total: a churrasqueira a gás Glass Falesa é feita em inox
 **Título** (27 chars)
 Qualidade e garantia total
 
-**Descrição** (25 chars)
+**Descrição — curta** (25 chars)
 Modelo Glass Falesa
+
+**Descrição — longa** (73 chars)
+Feita em inox, com qualidade e garantia para você comprar com confiança
+
+> Nota: campo "Descrição" no Meta tem limite oficial de ~27-30 caracteres pra exibir inteiro no Feed/Stories, mas em Marketplace, Busca e in-stream video aceita até ~90-150 chars. Adicione as duas versões como opções — o Meta testa e escolhe a melhor por posicionamento.
 
 ## Pendência
 
