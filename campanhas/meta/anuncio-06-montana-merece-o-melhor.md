@@ -1,6 +1,6 @@
 # Anúncio Meta Ads — Criativo 06 (churrasqueira Montana, "merece o melhor")
 
-> Referência: criativos/06.png
+> Referência: criativos/06.png e criativos/06(1).png (arquivo duplicado — mesma imagem e texto)
 > Produto: churrasqueira a gás em inox 3 queimadores modelo Montana (dados/produtos-ecommerce.md, PRODUTO 6, SKU ALVIM006, R$ 9.588,00).
 > Gancho do criativo: aspiracional — "A sua área gourmet merece o melhor" (sem menção a frete). Diferente do criativo 06 Storie(3), que usa o mesmo produto com gancho de frete grátis.
 
