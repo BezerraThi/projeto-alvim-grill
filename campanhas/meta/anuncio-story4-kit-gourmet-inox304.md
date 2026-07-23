@@ -53,6 +53,48 @@ Inox 304 para áreas litorâneas
 **Descrição — longa** (49 chars)
 Material resistente à maresia, ideal pra praia
 
+## Set 4 — Praticidade de montagem (seguro de usar)
+
+**Texto principal** (141 chars)
+Cada peça do Kit Gourmet Alvim Grill é pensada pra sua área gourmet: coifa, exaustor, braseiro blindado e vidros temperados, tudo pronto pra montar.
+
+**Título** (29 chars)
+Kit Gourmet completo e pronto
+
+**Descrição — curta** (19 chars)
+Pronto para montar
+
+**Descrição — longa** (46 chars)
+Todas as peças do Kit Gourmet em um só lugar
+
+## Set 5 — Resistência genérica, sem citar 304 ou 430 (seguro de usar)
+
+**Texto principal** (124 chars)
+O Kit Gourmet Alvim Grill é feito pra durar: estrutura resistente, braseiro blindado e vidros temperados pra sua área gourmet.
+
+**Título** (17 chars)
+Feito pra durar
+
+**Descrição — curta** (30 chars)
+Estrutura resistente e durável
+
+**Descrição — longa** (51 chars)
+Kit Gourmet com braseiro blindado e vidros temperados
+
+## Set 6 — Aspiracional / área gourmet (seguro de usar)
+
+**Texto principal** (132 chars)
+Transforme sua área gourmet com o Kit Gourmet Alvim Grill: coifa, braseiro e vidros temperados em um design que impressiona.
+
+**Título** (22 chars)
+Eleve sua área gourmet
+
+**Descrição — curta** (22 chars)
+Design que impressiona
+
+**Descrição — longa** (42 chars)
+Kit completo pra área gourmet dos seus sonhos
+
 > Nota: campo "Descrição" tem limite garantido de ~27-30 chars no Feed/Stories; a versão longa (~60-90 chars) aparece em Marketplace, Busca e in-stream. Cadastrar as duas como opções.
 
 ## Pendências
