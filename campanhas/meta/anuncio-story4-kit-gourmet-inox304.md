@@ -1,6 +1,6 @@
 # Anúncio Meta Ads — Instagram Story 4 (Kit Gourmet, inox 304 "não enferruja")
 
-> Referência: criativos/Instagram story - 4.png
+> Referência: criativos/Instagram story - 4.png (fundo branco) e criativos/Instagram story - 12.png (mesma peça, fundo laranja)
 > Formato: creative educativo/exploded-view, mesmo template do Instagram Story 3, mas com acabamento polido e rótulo "INOX 304 - Não enferruja".
 
 ## ⚠️ ALERTA DE MATERIAL — CONFIRMAR ANTES DE VEICULAR
