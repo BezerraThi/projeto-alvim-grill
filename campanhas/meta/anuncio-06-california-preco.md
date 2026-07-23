@@ -52,3 +52,4 @@ Churrasqueira Califórnia com preço facilitado em até 12x
 ## Pendência
 
 - **SKU não catalogado**: "Califórnia" não está em dados/produtos-ecommerce.md. Antes de escalar essa peça, confirmar material (inox 304?), número de queimadores, medidas e potência — a foto sugere um modelo compacto/cooktop com 2 queimadores, mas isso não está confirmado em nenhuma fonte de dados.
+- **Atualização**: o criativo Instagram Story 9 confirma o material — inox 304. Ver campanhas/meta/anuncio-story9-california-inox304.md. Ainda faltam queimadores, medidas e potência.
